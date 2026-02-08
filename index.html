@@ -2,60 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SEC Filing Tracker</title>
+    <title>SEC 10-K / 10-Q Dashboard</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <style>
-        body { font-family: sans-serif; margin: 20px; background: #f4f7f6; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background: #004a99; color: white; }
-        .btn { background: #28a745; color: white; text-decoration: none; padding: 5px 10px; border-radius: 4px; font-size: 12px; }
-        #search { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        body { font-family: -apple-system, sans-serif; margin: 25px; background: #f4f6f9; color: #333; }
+        .wrapper { max-width: 1200px; margin: auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        h1 { color: #002d5d; margin-top: 0; }
+        #search { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; outline: none; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: #002d5d; color: white; padding: 15px; text-align: left; position: sticky; top: 0; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        tr:hover { background: #fcfcfc; }
+        .btn { text-decoration: none; color: white; padding: 6px 10px; border-radius: 5px; font-size: 11px; font-weight: bold; display: inline-block; }
+        .btn-k { background: #007bff; }
+        .btn-q { background: #6f42c1; }
+        .date { font-family: monospace; color: #666; font-size: 13px; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h2>Corporate Filing Database</h2>
-        <input type="text" id="search" placeholder="Search ticker..." onkeyup="filter()">
-        <table id="mainTable">
+    <div class="wrapper">
+        <h1>SEC Financial Reporting Matrix</h1>
+        <input type="text" id="search" placeholder="Filter by Ticker (e.g. AAPL) or Name..." onkeyup="doSearch()">
+        <table id="filingTable">
             <thead>
                 <tr>
                     <th>Ticker</th>
-                    <th>Company</th>
-                    <th>Next Earnings</th>
-                    <th>Latest 10-K/Q</th>
-                    <th>Link</th>
+                    <th>Company Name</th>
+                    <th>Latest 10-K</th>
+                    <th>10-K Link</th>
+                    <th>Latest 10-Q</th>
+                    <th>10-Q Link</th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
     </div>
+
     <script>
-        async function load() {
-            const r = await fetch('tickers_preview.csv');
-            const data = await r.text();
-            Papa.parse(data, {
+        async function loadData() {
+            const response = await fetch('tickers_preview.csv');
+            const csv = await response.text();
+            Papa.parse(csv, {
                 header: true,
+                skipEmptyLines: true,
                 complete: (results) => {
-                    const tbody = document.querySelector('#mainTable tbody');
+                    const tbody = document.querySelector('#filingTable tbody');
                     results.data.forEach(row => {
-                        if (!row.Ticker) return;
                         const tr = document.createElement('tr');
-                        const link = row['Filing Link'] ? `<a class="btn" href="${row['Filing Link']}" target="_blank">View</a>` : 'N/A';
-                        tr.innerHTML = `<td><b>${row.Ticker}</b></td><td>${row.Company}</td><td>${row.Earnings}</td><td>${row['Last 10-K/Q']}</td><td>${link}</td>`;
+                        const kLink = row['10-K Link'] ? `<a class="btn btn-k" href="${row['10-K Link']}" target="_blank">OPEN 10-K</a>` : '—';
+                        const qLink = row['10-Q Link'] ? `<a class="btn btn-q" href="${row['10-Q Link']}" target="_blank">OPEN 10-Q</a>` : '—';
+                        
+                        tr.innerHTML = `
+                            <td><strong>${row.Ticker}</strong></td>
+                            <td>${row.Company}</td>
+                            <td class="date">${row['Latest 10-K']}</td>
+                            <td>${kLink}</td>
+                            <td class="date">${row['Latest 10-Q']}</td>
+                            <td>${qLink}</td>
+                        `;
                         tbody.appendChild(tr);
                     });
                 }
             });
         }
-        function filter() {
-            const q = document.getElementById('search').value.toUpperCase();
-            document.querySelectorAll('#mainTable tbody tr').forEach(tr => {
-                tr.style.display = tr.innerText.toUpperCase().includes(q) ? '' : 'none';
+        function doSearch() {
+            const val = document.getElementById('search').value.toUpperCase();
+            document.querySelectorAll('#filingTable tbody tr').forEach(row => {
+                row.style.display = row.innerText.toUpperCase().includes(val) ? '' : 'none';
             });
         }
-        load();
+        loadData();
     </script>
 </body>
 </html>
