@@ -1,11 +1,11 @@
-name: Daily SEC & AI Sync
+name: Daily SEC Ticker Sync
 on:
   schedule:
     - cron: '0 9 * * *'
   workflow_dispatch:
 
 jobs:
-  sync_job:
+  sync:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,14 +15,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-      - name: Run Tracker
+      - name: Sync Data
         run: |
           pip install requests
           python update_tickers.py
-      - name: Commit & Push
+      - name: Commit Changes
         run: |
           git config --global user.name "RyanSchraub-Bot"
           git config --global user.email "ryan.schraub@gmail.com"
           git add tickers.db tickers_preview.csv
-          git commit -m "SEC Update + AI Summaries: $(date)" || echo "No changes"
+          git commit -m "SEC & AI Data Update: $(date)" || echo "No changes"
           git push
