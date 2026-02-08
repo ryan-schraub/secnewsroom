@@ -3,13 +3,13 @@ name: Daily SEC Ticker Sync
 on:
   schedule:
     - cron: '0 9 * * *' # Runs every day at 9 AM UTC
-  workflow_dispatch:   # This line is what creates the "Run workflow" button
+  workflow_dispatch:   # This line creates the "Run workflow" button
 
 jobs:
   build:
     runs-on: ubuntu-latest
     
-    # This gives the "robot" permission to save the database back to your repo
+    # Critical: This allows the Action to write the database and CSV back to your repo
     permissions:
       contents: write
 
@@ -33,5 +33,5 @@ jobs:
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
           git add tickers.db tickers_preview.csv
-          git commit -m "Automated daily ticker update" || echo "No changes to commit"
+          git commit -m "Automated daily ticker update: $(date)" || echo "No changes to commit"
           git push
