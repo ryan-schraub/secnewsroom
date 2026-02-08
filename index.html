@@ -7,6 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <style>
@@ -14,22 +15,18 @@
             --navy: #0F172A; --slate: #64748B; --accent: #3B82F6; --growth: #10B981; --bg: #F8FAFC;
         }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--navy); }
-        
         .navbar { background: white; border-bottom: 1px solid #e2e8f0; padding: 1rem 2rem; }
         .navbar-brand { font-weight: 700; color: var(--navy) !important; letter-spacing: -0.5px; }
-        
         .bento-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 30px; }
         .bento-item { background: white; padding: 25px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-        
         .wrapper { background: white; padding: 30px; border-radius: 20px; border: 1px solid #e2e8f0; }
-        #filingTable { border: none !important; font-size: 0.95rem; }
-        #filingTable thead th { background: #F1F5F9; color: var(--slate); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; padding: 15px; }
-        
+        #filingTable { border: none !important; font-size: 0.85rem; }
+        #filingTable thead th { background: #F1F5F9; color: var(--slate); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em; padding: 15px; }
         .ticker-badge { font-family: 'JetBrains Mono', monospace; background: #EEF2FF; color: #4338CA; padding: 4px 8px; border-radius: 6px; font-weight: 600; }
-        .btn-analysis { background: var(--navy); color: white; border-radius: 8px; font-weight: 600; transition: all 0.2s; border: none; padding: 8px 16px; text-decoration: none; display: inline-block; }
+        .btn-analysis { background: var(--navy); color: white; border-radius: 8px; font-weight: 600; transition: all 0.2s; border: none; padding: 6px 12px; text-decoration: none; display: inline-block; font-size: 0.8rem; }
         .btn-analysis:hover { background: var(--accent); transform: translateY(-1px); color: white; }
-        
-        .dataTables_filter input { border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px 15px; width: 300px !important; outline: none; }
+        .dt-buttons { margin-bottom: 15px; }
+        .dt-button { background: white !important; border: 1px solid #e2e8f0 !important; border-radius: 8px !important; font-size: 0.8rem !important; }
     </style>
 </head>
 <body>
@@ -50,26 +47,25 @@
             <h5 class="text-muted small fw-bold">MARKET INSIGHT</h5>
             <h2 class="fw-bold">RTX Revenue Surges 10%</h2>
             <p class="text-slate mb-3">Analysis shows strong organic growth in Pratt & Whitney segment. Dive into the 2025 Revenue Bridge.</p>
-            <a href="reports/analysis_rtx.html" class="btn btn-analysis">Read RTX Analysis</a>
+            <a href="reports/analysis_rtx.html" class="btn btn-analysis" style="font-size: 1rem; padding: 10px 20px;">Read RTX Analysis</a>
         </div>
         <div class="bento-item bg-dark text-white">
             <h5 class="text-secondary small fw-bold">SYSTEM STATUS</h5>
-            <div class="display-6 fw-bold" id="tickerCount">10,402</div>
+            <div class="display-6 fw-bold" id="tickerCount">0</div>
             <p class="small text-secondary">Tickers Monitored Today</p>
             <div class="progress mt-2" style="height: 6px; background: #334155;">
-                <div class="progress-bar bg-primary" style="width: 85%"></div>
+                <div class="progress-bar bg-primary" style="width: 100%"></div>
             </div>
         </div>
     </div>
 
     <div class="wrapper">
-        <table id="filingTable" class="table">
+        <table id="filingTable" class="table align-middle">
             <thead>
                 <tr>
                     <th>Ticker</th>
                     <th>Company Name</th>
-                    <th>Latest 10-K</th>
-                    <th>Documents</th>
+                    <th>Location</th> <th>Inc</th>      <th>FYE</th>      <th>Industry</th> <th>Latest 10-K</th>
                     <th>Latest 10-Q</th>
                     <th>Intelligence</th>
                 </tr>
@@ -81,6 +77,8 @@
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.colVis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 
 <script>
@@ -98,34 +96,38 @@
             header: true,
             skipEmptyLines: true,
             complete: function(results) {
-                // Update system status count dynamically
                 document.getElementById('tickerCount').innerText = results.data.length.toLocaleString();
 
                 $('#filingTable').DataTable({
                     data: results.data,
                     deferRender: true,
                     pageLength: 20,
-                    dom: '<"d-flex justify-content-between align-items-center mb-4"f>rt<"d-flex justify-content-between mt-3"ip>',
+                    dom: 'Bfrtip', // B adds the Column Visibility button
+                    buttons: [
+                        {
+                            extend: 'colvis',
+                            text: 'Toggle Metadata',
+                            columns: [2, 3, 4, 5] // Location, Inc, FYE, Industry
+                        }
+                    ],
                     columns: [
                         { data: 'Ticker', render: d => `<span class="ticker-badge">${d}</span>` },
                         { data: 'Company', className: 'fw-semibold' },
-                        { data: 'Latest 10-K', className: 'text-muted small' },
+                        { data: 'Location', visible: false },
+                        { data: 'Inc', visible: false },
+                        { data: 'FYE', visible: false },
+                        { data: 'Industry', visible: false },
                         { 
-                            data: '10-K Link', 
-                            render: link => link ? `<a href="${link}" target="_blank" class="text-decoration-none">📄 10-K</a>` : '—'
+                            data: 'K_Date', 
+                            render: (date, type, row) => row.K_Link ? `<a href="${row.K_Link}" target="_blank" class="text-decoration-none">📄 ${date}</a>` : '—'
                         },
-                        { data: 'Latest 10-Q', className: 'text-muted small' },
+                        { 
+                            data: 'Q_Date', 
+                            render: (date, type, row) => row.Q_Link ? `<a href="${row.Q_Link}" target="_blank" class="text-decoration-none">📄 ${date}</a>` : '—'
+                        },
                         { 
                             data: 'Ticker',
-                            render: (ticker) => {
-                                // List the tickers you have manually analyzed here
-                                const analysisTickers = ['RTX', 'AAPL', 'TSLA']; 
-                                if (analysisTickers.includes(ticker)) {
-                                    // UPDATED PATH TO POINT TO REPORTS FOLDER
-                                    return `<a href="reports/analysis_${ticker.toLowerCase()}.html" class="btn btn-sm btn-analysis">ANALYZE</a>`;
-                                }
-                                return `<span class="text-muted small italic">Awaiting Data</span>`;
-                            }
+                            render: (ticker) => `<a href="reports/analysis_${ticker.toLowerCase()}.html" class="btn btn-sm btn-analysis">ANALYZE</a>`
                         }
                     ]
                 });
