@@ -1,11 +1,11 @@
-name: SEC Hourly Research
+name: SEC Master & Research Sync
 on:
   schedule:
     - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs:
-  run-sync:
+  run-all:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,14 +15,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-      - name: Dependencies
+      - name: Install Dependencies
         run: pip install requests
-      - name: Update Master & Research 8-Ks
+      - name: Execute Script
         run: python update_tickers.py
-      - name: Save Persistent State
+      - name: Save Updated DB and CSV
         run: |
-          git config --global user.name "SEC-AI-Bot"
+          git config --global user.name "SEC-Sync-Bot"
           git config --global user.email "bot@example.com"
           git add tickers.db tickers_preview.csv
-          git commit -m "AI Research Update: $(date)" || echo "No new filings"
+          git commit -m "Automated Master + AI Update: $(date)" || echo "No new filings"
           git push
