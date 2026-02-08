@@ -15,7 +15,7 @@ def main():
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
 
-    # 1. SETUP TABLE: Keeps your original ticker list structure
+    # 1. CREATE TABLE: This schema supports both Ticker tracking and Earnings
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS ticker_event_log (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -28,20 +28,22 @@ def main():
         )
     ''')
 
-    # 2. PART A: THE MASTER LIST (All Tickers)
-    # This runs every time but 'INSERT OR IGNORE' ensures it doesn't overwrite your data
+    # 2. PART A: THE MASTER LIST (Every Ticker)
+    # We fetch the full SEC list to ensure no company is missing.
     master_data = requests.get("https://www.sec.gov/files/company_tickers.json", headers=HEADERS).json()
     now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     for item in master_data.values():
         cik, ticker, name = item['cik_str'], item['ticker'].upper(), item['title']
+        
+        # We use INSERT OR IGNORE so we don't overwrite existing 'Confirmed' earnings 
+        # dates with the 'Legal Fallback' on every run.
         cursor.execute('''
             INSERT OR IGNORE INTO ticker_event_log (cik, ticker, name, event_scenario, next_earnings, timestamp) 
             VALUES (?, ?, ?, ?, ?, ?)
         ''', (cik, ticker, name, "-", "2026-05-15 (Legal Fallback)", now))
 
-    # 3. PART B: THE AI RESEARCH (Hourly Pulse)
-    # This specifically looks for new 8-Ks and updates the 'Earnings' for those tickers
+    # 3. PART B: THE 8-K RESEARCH (Hourly Update)
     try:
         rss = requests.get(RSS_URL, headers=HEADERS)
         root = ET.fromstring(rss.content)
@@ -53,20 +55,19 @@ def main():
                 # Extracts ticker from "8-K - Apple Inc. (0000320193) (Ticker: AAPL)"
                 try:
                     ticker_part = title.split('(')[-1].replace("Ticker: ", "").replace(")", "").strip()
-                    
-                    # Update ONLY the earnings info for this specific company
+                    # If we find a match, update that ticker's row with the 'Confirmed' status
                     cursor.execute('''
                         UPDATE ticker_event_log 
                         SET next_earnings = ?, event_scenario = ?, timestamp = ?
                         WHERE ticker = ?
-                    ''', ("Confirmed via 8-K", "AI_RESEARCHED", now, ticker_part))
+                    ''', ("Confirmed via 8-K", "NEW_FILING", now, ticker_part))
                 except: continue
     except Exception as e:
         print(f"Research failed: {e}")
 
     conn.commit()
 
-    # 4. EXPORT TO CSV: For the website to display
+    # 4. EXPORT TO CSV
     cursor.execute("SELECT ticker, name, event_scenario, next_earnings, timestamp FROM ticker_event_log ORDER BY ticker ASC")
     rows = cursor.fetchall()
     with open(CSV_OUTPUT, 'w', newline='', encoding='utf-8') as f:
