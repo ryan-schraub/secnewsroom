@@ -13,20 +13,20 @@
         tr:hover { background-color: #f1f1f1; }
         .link-btn { 
             text-decoration: none; 
-            background: #007bff; 
+            background: #28a745; 
             color: white; 
             padding: 5px 10px; 
             border-radius: 4px; 
-            font-size: 0.8em; 
+            font-size: 0.85em; 
         }
-        .link-btn:hover { background: #0056b3; }
+        .link-btn:hover { background: #218838; }
         #search { padding: 10px; width: 300px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
     </style>
 </head>
 <body>
 
-    <h2>Latest SEC 10-K & 10-Q Filings</h2>
-    <input type="text" id="search" placeholder="Search by Ticker or Company..." onkeyup="filterTable()">
+    <h2>SEC Filing Tracker (10-K & 10-Q)</h2>
+    <input type="text" id="search" placeholder="Search Ticker or Company..." onkeyup="filterTable()">
 
     <table id="tickerTable">
         <thead>
@@ -34,13 +34,12 @@
                 <th>Ticker</th>
                 <th>Company</th>
                 <th>Status</th>
-                <th>Next Earnings</th>
+                <th>Earnings</th>
                 <th>Last 10-K/Q</th>
-                <th>Link</th>
+                <th>Filing Link</th>
             </tr>
         </thead>
-        <tbody>
-            </tbody>
+        <tbody></tbody>
     </table>
 
     <script>
@@ -53,13 +52,14 @@
                 skipEmptyLines: true,
                 complete: function(results) {
                     const tableBody = document.querySelector('#tickerTable tbody');
+                    tableBody.innerHTML = ''; // Clear existing
                     results.data.forEach(row => {
                         const tr = document.createElement('tr');
                         
-                        // Create link button if URL exists
-                        const linkHtml = row['Filing Link'] && row['Filing Link'].startsWith('http') 
-                            ? `<a href="${row['Filing Link']}" target="_blank" class="link-btn">View Filing</a>` 
-                            : 'N/A';
+                        // Create a button if a link exists
+                        const linkBtn = row['Filing Link'] && row['Filing Link'].startsWith('http') 
+                            ? `<a href="${row['Filing Link']}" target="_blank" class="link-btn">View Document</a>` 
+                            : '<span style="color:gray">N/A</span>';
 
                         tr.innerHTML = `
                             <td><strong>${row.Ticker}</strong></td>
@@ -67,7 +67,7 @@
                             <td>${row.Status || '-'}</td>
                             <td>${row.Earnings}</td>
                             <td>${row['Last 10-K/Q']}</td>
-                            <td>${linkHtml}</td>
+                            <td>${linkBtn}</td>
                         `;
                         tableBody.appendChild(tr);
                     });
