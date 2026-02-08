@@ -1,15 +1,15 @@
 import requests
 import sqlite3
 import csv
-import os
+import sys
 
 # 1. Setup Database
-# This creates a file named 'tickers.db' in your GitHub repo
+# Creates a local SQLite database that persists in your repository
 db_file = 'tickers.db'
 conn = sqlite3.connect(db_file)
 cursor = conn.cursor()
 
-# Create the table with CIK as the Unique ID
+# CIK (Central Index Key) is the unique ID that never changes for a company
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS sec_tickers (
         cik INTEGER PRIMARY KEY,
@@ -20,24 +20,24 @@ cursor.execute('''
 ''')
 
 # 2. Fetch Data from SEC
-# The SEC requires a User-Agent that identifies you
+# SEC requires a descriptive User-Agent or you will receive a 403 error
 headers = {
-    'User-Agent': 'Ryan Schraub (ryan.schraub@gmail.com)',
+    'User-Agent': 'RyanSchraub (ryan.schraub@gmail.com)',
     'Accept-Encoding': 'gzip, deflate'
 }
-url = "https://www.sec.gov/file/company-tickers"
+url = "https://www.sec.gov/files/company_tickers.json"
 
-print("Contacting SEC for latest ticker list...")
+print("Fetching latest tickers from SEC.gov...")
 try:
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     data = response.json()
     
-    # 3. Upsert into SQLite (Update existing, Insert new)
-    # We loop through the SEC's JSON and save it to our table
-    rows_to_insert = []
-    for item in data.values():
-        rows_to_insert.append((item['cik_str'], item['ticker'], item['title']))
+    # 3. Process and Upsert Data
+    # We use 'ON CONFLICT' to update names/tickers if the CIK already exists
+    ticker_list = []
+    for entry in data.values():
+        ticker_list.append((entry['cik_str'], entry['ticker'], entry['title']))
 
     cursor.executemany('''
         INSERT INTO sec_tickers (cik, ticker, name)
@@ -46,27 +46,25 @@ try:
             ticker=excluded.ticker,
             name=excluded.name,
             last_updated=CURRENT_TIMESTAMP
-    ''', rows_to_insert)
+    ''', ticker_list)
     
     conn.commit()
-    print(f"Database updated successfully with {len(rows_to_insert)} tickers.")
+    print(f"Database updated: {len(ticker_list)} records processed.")
 
-    # 4. Generate the CSV for GitHub Preview
-    # This part ensures 'tickers_preview.csv' is always created/overwritten
+    # 4. Export to CSV for GitHub Preview
+    # This step generates the visual table you see in the GitHub browser
     cursor.execute("SELECT ticker, cik, name FROM sec_tickers ORDER BY ticker ASC")
-    all_tickers = cursor.fetchall()
+    rows = cursor.fetchall()
     
-    csv_file = 'tickers_preview.csv'
-    with open(csv_file, 'w', newline='', encoding='utf-8') as f:
+    with open('tickers_preview.csv', 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        writer.writerow(['Ticker', 'CIK', 'Company Name']) # Header row
-        writer.writerows(all_tickers)
+        writer.writerow(['Ticker Symbol', 'SEC CIK', 'Company Name'])
+        writer.writerows(rows)
     
-    print(f"CSV preview generated: {csv_file}")
+    print("CSV preview file successfully generated.")
 
 except Exception as e:
-    print(f"An error occurred: {e}")
-    # This prevents GitHub from thinking the run succeeded if it actually failed
-    exit(1) 
+    print(f"Error occurred: {e}")
+    sys.exit(1) # Tells GitHub Action that the script failed
 finally:
     conn.close()
