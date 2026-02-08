@@ -2,36 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>SEC 10-K / 10-Q Dashboard</title>
+    <title>SEC Financial Filing Dashboard</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <style>
-        body { font-family: -apple-system, sans-serif; margin: 25px; background: #f4f6f9; color: #333; }
-        .wrapper { max-width: 1200px; margin: auto; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        h1 { color: #002d5d; margin-top: 0; }
-        #search { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; outline: none; }
+        body { font-family: -apple-system, sans-serif; margin: 30px; background: #f0f2f5; color: #1c1e21; }
+        .wrapper { max-width: 1300px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 30px rgba(0,0,0,0.1); }
+        h1 { color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+        #search { width: 100%; padding: 15px; margin: 20px 0; border: 1px solid #ccd0d5; border-radius: 8px; font-size: 18px; }
         table { width: 100%; border-collapse: collapse; }
-        th { background: #002d5d; color: white; padding: 15px; text-align: left; position: sticky; top: 0; }
-        td { padding: 12px; border-bottom: 1px solid #eee; }
-        tr:hover { background: #fcfcfc; }
-        .btn { text-decoration: none; color: white; padding: 6px 10px; border-radius: 5px; font-size: 11px; font-weight: bold; display: inline-block; }
-        .btn-k { background: #007bff; }
-        .btn-q { background: #6f42c1; }
-        .date { font-family: monospace; color: #666; font-size: 13px; }
+        th { background: #003366; color: white; padding: 15px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #ebedf0; }
+        .btn { text-decoration: none; color: white; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: bold; }
+        .btn-k { background: #1a73e8; }
+        .btn-q { background: #8e44ad; }
+        .date { font-family: monospace; color: #555; font-size: 14px; }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <h1>SEC Financial Reporting Matrix</h1>
-        <input type="text" id="search" placeholder="Filter by Ticker (e.g. AAPL) or Name..." onkeyup="doSearch()">
+        <h1>SEC Filer Matrix</h1>
+        <input type="text" id="search" placeholder="Type a Ticker or Company Name..." onkeyup="runSearch()">
         <table id="filingTable">
             <thead>
                 <tr>
                     <th>Ticker</th>
                     <th>Company Name</th>
                     <th>Latest 10-K</th>
-                    <th>10-K Link</th>
+                    <th>10-K Doc</th>
                     <th>Latest 10-Q</th>
-                    <th>10-Q Link</th>
+                    <th>10-Q Doc</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -39,7 +38,7 @@
     </div>
 
     <script>
-        async function loadData() {
+        async function init() {
             const response = await fetch('tickers_preview.csv');
             const csv = await response.text();
             Papa.parse(csv, {
@@ -49,8 +48,8 @@
                     const tbody = document.querySelector('#filingTable tbody');
                     results.data.forEach(row => {
                         const tr = document.createElement('tr');
-                        const kLink = row['10-K Link'] ? `<a class="btn btn-k" href="${row['10-K Link']}" target="_blank">OPEN 10-K</a>` : '—';
-                        const qLink = row['10-Q Link'] ? `<a class="btn btn-q" href="${row['10-Q Link']}" target="_blank">OPEN 10-Q</a>` : '—';
+                        const kLink = row['10-K Link'] ? `<a class="btn btn-k" href="${row['10-K Link']}" target="_blank">10-K</a>` : '—';
+                        const qLink = row['10-Q Link'] ? `<a class="btn btn-q" href="${row['10-Q Link']}" target="_blank">10-Q</a>` : '—';
                         
                         tr.innerHTML = `
                             <td><strong>${row.Ticker}</strong></td>
@@ -65,13 +64,13 @@
                 }
             });
         }
-        function doSearch() {
-            const val = document.getElementById('search').value.toUpperCase();
+        function runSearch() {
+            const query = document.getElementById('search').value.toUpperCase();
             document.querySelectorAll('#filingTable tbody tr').forEach(row => {
-                row.style.display = row.innerText.toUpperCase().includes(val) ? '' : 'none';
+                row.style.display = row.innerText.toUpperCase().includes(query) ? '' : 'none';
             });
         }
-        loadData();
+        init();
     </script>
 </body>
 </html>
