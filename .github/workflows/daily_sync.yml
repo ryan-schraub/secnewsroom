@@ -24,5 +24,5 @@ jobs:
           git config --global user.name "SEC-Sync-Bot"
           git config --global user.email "bot@example.com"
           git add tickers.db tickers_preview.csv
-          git commit -m "Automated Master + AI Update: $(date)" || echo "No new filings"
+          git commit -m "Automated Update: $(date)" || echo "No changes"
           git push
