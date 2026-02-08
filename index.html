@@ -15,25 +15,20 @@
         }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--navy); }
         
-        /* Modern Navbar */
         .navbar { background: white; border-bottom: 1px solid #e2e8f0; padding: 1rem 2rem; }
         .navbar-brand { font-weight: 700; color: var(--navy) !important; letter-spacing: -0.5px; }
         
-        /* Bento Box Header */
         .bento-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 30px; }
         .bento-item { background: white; padding: 25px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
         
-        /* Table Styling */
         .wrapper { background: white; padding: 30px; border-radius: 20px; border: 1px solid #e2e8f0; }
         #filingTable { border: none !important; font-size: 0.95rem; }
         #filingTable thead th { background: #F1F5F9; color: var(--slate); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em; padding: 15px; }
         
-        /* Buttons & Badges */
         .ticker-badge { font-family: 'JetBrains Mono', monospace; background: #EEF2FF; color: #4338CA; padding: 4px 8px; border-radius: 6px; font-weight: 600; }
-        .btn-analysis { background: var(--navy); color: white; border-radius: 8px; font-weight: 600; transition: all 0.2s; border: none; padding: 8px 16px; }
-        .btn-analysis:hover { background: var(--accent); transform: translateY(-1px); }
+        .btn-analysis { background: var(--navy); color: white; border-radius: 8px; font-weight: 600; transition: all 0.2s; border: none; padding: 8px 16px; text-decoration: none; display: inline-block; }
+        .btn-analysis:hover { background: var(--accent); transform: translateY(-1px); color: white; }
         
-        /* Custom Search Bar */
         .dataTables_filter input { border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px 15px; width: 300px !important; outline: none; }
     </style>
 </head>
@@ -55,11 +50,11 @@
             <h5 class="text-muted small fw-bold">MARKET INSIGHT</h5>
             <h2 class="fw-bold">RTX Revenue Surges 10%</h2>
             <p class="text-slate mb-3">Analysis shows strong organic growth in Pratt & Whitney segment. Dive into the 2025 Revenue Bridge.</p>
-            <a href="analysis_rtx.html" class="btn btn-analysis">Read RTX Analysis</a>
+            <a href="reports/analysis_rtx.html" class="btn btn-analysis">Read RTX Analysis</a>
         </div>
         <div class="bento-item bg-dark text-white">
             <h5 class="text-secondary small fw-bold">SYSTEM STATUS</h5>
-            <div class="display-6 fw-bold">10,402</div>
+            <div class="display-6 fw-bold" id="tickerCount">10,402</div>
             <p class="small text-secondary">Tickers Monitored Today</p>
             <div class="progress mt-2" style="height: 6px; background: #334155;">
                 <div class="progress-bar bg-primary" style="width: 85%"></div>
@@ -89,14 +84,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 
 <script>
-    // Live Clock Logic
     function updateClock() {
         const now = new Date();
         document.getElementById('clock').innerText = now.toLocaleString();
     }
     setInterval(updateClock, 1000);
 
-    // Fast Table Initialization
     async function initTable() {
         const response = await fetch('tickers_preview.csv');
         const csvData = await response.text();
@@ -105,6 +98,9 @@
             header: true,
             skipEmptyLines: true,
             complete: function(results) {
+                // Update system status count dynamically
+                document.getElementById('tickerCount').innerText = results.data.length.toLocaleString();
+
                 $('#filingTable').DataTable({
                     data: results.data,
                     deferRender: true,
@@ -122,9 +118,11 @@
                         { 
                             data: 'Ticker',
                             render: (ticker) => {
-                                const analysisTickers = ['RTX']; 
+                                // List the tickers you have manually analyzed here
+                                const analysisTickers = ['RTX', 'AAPL', 'TSLA']; 
                                 if (analysisTickers.includes(ticker)) {
-                                    return `<a href="analysis_${ticker.toLowerCase()}.html" class="btn btn-sm btn-analysis">ANALYZE</a>`;
+                                    // UPDATED PATH TO POINT TO REPORTS FOLDER
+                                    return `<a href="reports/analysis_${ticker.toLowerCase()}.html" class="btn btn-sm btn-analysis">ANALYZE</a>`;
                                 }
                                 return `<span class="text-muted small italic">Awaiting Data</span>`;
                             }
