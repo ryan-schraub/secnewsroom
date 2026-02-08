@@ -1,35 +1,28 @@
-name: Event-Based Security Master Sync
-
+name: Daily SEC Sync
 on:
   schedule:
-    - cron: '0 9 * * *'
-  workflow_dispatch:
+    - cron: '0 9 * * *' # Runs every day at 9:00 AM UTC
+  workflow_dispatch:   # Allows you to run it manually for testing
 
 jobs:
-  sync:
+  build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-
+      contents: write  # Crucial: This allows the bot to save the CSV/DB
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-
       - name: Install dependencies
         run: pip install requests
-
-      - name: Run Event Sync
+      - name: Run Sync Script
         run: python update_tickers.py
-
-      - name: Save Changes
+      - name: Commit and Push changes
         run: |
           git config --global user.name "GitHub Action"
           git config --global user.email "action@github.com"
-          git add -A
-          git commit -m "Event Log Update: $(date)" || echo "No changes"
+          git add tickers.db tickers_preview.csv
+          git commit -m "SEC Update: $(date)" || echo "No changes to commit"
           git push
