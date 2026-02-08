@@ -13,7 +13,7 @@ def main():
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
 
-    # 1. Create table with AI Research column
+    # 1. Ensure table exists with the AI Research column
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS ticker_event_log (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,14 +27,19 @@ def main():
         )
     ''')
 
-    # 2. Check if this is the very first run (Baseline)
+    # 2. Baseline Check: Is the database empty?
     cursor.execute("SELECT COUNT(*) FROM ticker_event_log")
-    is_database_empty = cursor.fetchone()[0] == 0
+    is_first_run = cursor.fetchone()[0] == 0
     
     # 3. Fetch SEC Data
     headers = {'User-Agent': f'SecurityMasterBot ({USER_EMAIL})'}
-    response = requests.get(SEC_URL, headers=headers)
-    data = response.json()
+    try:
+        response = requests.get(SEC_URL, headers=headers)
+        data = response.json()
+    except Exception as e:
+        print(f"Fetch failed: {e}")
+        return
+
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     incoming_ciks = {item['cik_str']: item for item in data.values()}
 
@@ -42,6 +47,7 @@ def main():
         ticker = str(info['ticker']).upper()
         name = info['title']
 
+        # Get latest state
         cursor.execute('''
             SELECT ticker, name FROM ticker_event_log 
             WHERE cik = ? ORDER BY timestamp DESC LIMIT 1
@@ -52,19 +58,19 @@ def main():
         ai_note = ""
 
         if not latest:
-            # FIX: If DB is empty, mark as baseline (-). Otherwise, it's a NEW_LISTING.
-            scenario = "-" if is_database_empty else "NEW_LISTING"
+            # FIX: First run gets '-' to prevent 10k "New Listing" alerts
+            scenario = "-" if is_first_run else "NEW_LISTING"
         elif latest[0] != ticker:
-            # Check for the AAM to Dauch Change
+            # Handle AAM to Dauch Rebrand specifically
             if ticker == "DCH" and "DAUCH" in name.upper():
                 scenario = f"REBRAND: {latest[0]} → {ticker}"
-                ai_note = "American Axle & Manufacturing rebranded to Dauch Corp following the $1.44B acquisition of Dowlais Group (GKN Automotive) to focus on electric/hybrid drivelines."
+                ai_note = "American Axle rebranded to Dauch Corp following the acquisition of Dowlais Group to focus on EV technology."
             else:
                 scenario = f"TICKER_CHANGE: {latest[0]} → {ticker}"
                 ai_note = "AI Research: Analyzing SEC filings for merger or symbol update..."
         elif latest[1] != name:
             scenario = f"NAME_CHANGE: {latest[1]} → {name}"
-            ai_note = "AI Research: Corporate name update detected."
+            ai_note = "AI Research: Legal name update detected."
 
         if scenario:
             cursor.execute('''
@@ -74,7 +80,7 @@ def main():
 
     conn.commit()
 
-    # 4. Export for Website (Last Event for each CIK)
+    # 4. Export for Web (Latest event for each active CIK)
     cursor.execute('''
         SELECT ticker, cik, name, event_scenario, ai_research, timestamp 
         FROM ticker_event_log t1
