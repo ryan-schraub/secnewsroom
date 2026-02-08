@@ -1,56 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>SEC Security Master</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEC Filing Tracker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background: #f4f4f9; }
+        table { width: 100%; border-collapse: collapse; background: white; margin-top: 20px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #004a99; color: white; position: sticky; top: 0; }
+        tr:hover { background-color: #f1f1f1; }
+        .link-btn { 
+            text-decoration: none; 
+            background: #007bff; 
+            color: white; 
+            padding: 5px 10px; 
+            border-radius: 4px; 
+            font-size: 0.8em; 
+        }
+        .link-btn:hover { background: #0056b3; }
+        #search { padding: 10px; width: 300px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+    </style>
 </head>
-<body class="bg-light">
-    <div class="container-fluid p-4">
-        <div class="card shadow p-4">
-            <h3 class="mb-4">📊 SEC Security Master & Earnings Tracker</h3>
-            <table id="masterTable" class="table table-hover table-sm" style="width:100%">
-                <thead>
-                    <tr>
-                        <th>Ticker</th>
-                        <th>Company</th>
-                        <th>Event</th>
-                        <th>Earnings Info</th>
-                        <th>Last Sync</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
+<body>
 
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <h2>Latest SEC 10-K & 10-Q Filings</h2>
+    <input type="text" id="search" placeholder="Search by Ticker or Company..." onkeyup="filterTable()">
+
+    <table id="tickerTable">
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Company</th>
+                <th>Status</th>
+                <th>Next Earnings</th>
+                <th>Last 10-K/Q</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
 
     <script>
-        Papa.parse("tickers_preview.csv", {
-            download: true, header: true, skipEmptyLines: true,
-            complete: function(results) {
-                $('#masterTable').DataTable({
-                    data: results.data,
-                    columns: [
-                        { data: "Ticker", render: d => `<b>${d}</b>` },
-                        { data: "Company" },
-                        { 
-                            data: "Status", 
-                            render: s => s === "NEW_FILING" ? `<span class="badge bg-primary">8-K FILED</span>` : s 
-                        },
-                        { 
-                            data: "Earnings",
-                            render: e => e.includes("Confirmed") ? `<span class="text-success fw-bold">✅ ${e}</span>` : `<span class="text-muted">${e}</span>`
-                        },
-                        { data: "LastSync" }
-                    ],
-                    pageLength: 50
-                });
-            }
-        });
+        async function loadCSV() {
+            const response = await fetch('tickers_preview.csv');
+            const csvData = await response.text();
+            
+            Papa.parse(csvData, {
+                header: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    const tableBody = document.querySelector('#tickerTable tbody');
+                    results.data.forEach(row => {
+                        const tr = document.createElement('tr');
+                        
+                        // Create link button if URL exists
+                        const linkHtml = row['Filing Link'] && row['Filing Link'].startsWith('http') 
+                            ? `<a href="${row['Filing Link']}" target="_blank" class="link-btn">View Filing</a>` 
+                            : 'N/A';
+
+                        tr.innerHTML = `
+                            <td><strong>${row.Ticker}</strong></td>
+                            <td>${row.Company}</td>
+                            <td>${row.Status || '-'}</td>
+                            <td>${row.Earnings}</td>
+                            <td>${row['Last 10-K/Q']}</td>
+                            <td>${linkHtml}</td>
+                        `;
+                        tableBody.appendChild(tr);
+                    });
+                }
+            });
+        }
+
+        function filterTable() {
+            const input = document.getElementById("search").value.toUpperCase();
+            const rows = document.querySelectorAll("#tickerTable tbody tr");
+            rows.forEach(row => {
+                const text = row.innerText.toUpperCase();
+                row.style.display = text.includes(input) ? "" : "none";
+            });
+        }
+
+        window.onload = loadCSV;
     </script>
 </body>
 </html>
