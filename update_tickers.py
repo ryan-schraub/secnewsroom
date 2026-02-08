@@ -1,7 +1,6 @@
 import requests
 import sqlite3
 import csv
-import os
 from datetime import datetime
 
 # CONFIGURATION
@@ -14,7 +13,7 @@ def main():
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
 
-    # 1. Ensure table has the 'ai_research' column
+    # 1. Create table with AI Research column
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS ticker_event_log (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -28,10 +27,11 @@ def main():
         )
     ''')
 
-    # 2. Check if this is the FIRST run (Baseline)
+    # 2. Check if this is the very first run (Baseline)
     cursor.execute("SELECT COUNT(*) FROM ticker_event_log")
-    is_first_run = cursor.fetchone()[0] == 0
+    is_database_empty = cursor.fetchone()[0] == 0
     
+    # 3. Fetch SEC Data
     headers = {'User-Agent': f'SecurityMasterBot ({USER_EMAIL})'}
     response = requests.get(SEC_URL, headers=headers)
     data = response.json()
@@ -52,19 +52,19 @@ def main():
         ai_note = ""
 
         if not latest:
-            # FIX: Use '-' for the baseline run to prevent 10,000 "New Listings"
-            scenario = "-" if is_first_run else "NEW_LISTING"
+            # FIX: If DB is empty, mark as baseline (-). Otherwise, it's a NEW_LISTING.
+            scenario = "-" if is_database_empty else "NEW_LISTING"
         elif latest[0] != ticker:
-            # Specific logic for Dauch/AAM rebranding
+            # Check for the AAM to Dauch Change
             if ticker == "DCH" and "DAUCH" in name.upper():
-                scenario = f"REBRAND: AAM to Dauch ({latest[0]} → {ticker})"
-                ai_note = "Dauch Corp (formerly American Axle) rebranded following the Dowlais Group acquisition to reflect a new strategy."
+                scenario = f"REBRAND: {latest[0]} → {ticker}"
+                ai_note = "American Axle & Manufacturing rebranded to Dauch Corp following the $1.44B acquisition of Dowlais Group (GKN Automotive) to focus on electric/hybrid drivelines."
             else:
                 scenario = f"TICKER_CHANGE: {latest[0]} → {ticker}"
-                ai_note = "AI Researching: Detected ticker swap. Checking for merger, spinoff, or rebranding..."
+                ai_note = "AI Research: Analyzing SEC filings for merger or symbol update..."
         elif latest[1] != name:
             scenario = f"NAME_CHANGE: {latest[1]} → {name}"
-            ai_note = "AI Researching: Name update detected. Checking for corporate restructuring..."
+            ai_note = "AI Research: Corporate name update detected."
 
         if scenario:
             cursor.execute('''
@@ -74,7 +74,7 @@ def main():
 
     conn.commit()
 
-    # 3. Export for Website
+    # 4. Export for Website (Last Event for each CIK)
     cursor.execute('''
         SELECT ticker, cik, name, event_scenario, ai_research, timestamp 
         FROM ticker_event_log t1
