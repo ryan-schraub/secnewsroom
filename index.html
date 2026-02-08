@@ -1,19 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>SEC Master Event Tracker</title>
+    <title>SEC Master Monitor</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <style>
-        body { padding: 20px; background: #f8f9fa; }
-        .badge-ai { background: #0d6efd; color: white; } /* Blue for AI */
-        .badge-legal { background: #6c757d; color: white; } /* Gray for Fallback */
-    </style>
 </head>
-<body>
+<body class="bg-light p-4">
     <div class="container-fluid bg-white p-4 shadow rounded">
-        <h2>📊 SEC Security Master & AI Earnings</h2>
+        <h3>📊 SEC Security Master & AI Research</h3>
         <table id="masterTable" class="table table-sm table-hover" style="width:100%">
             <thead>
                 <tr>
@@ -21,7 +15,7 @@
                     <th>Company</th>
                     <th>Status</th>
                     <th>Earnings</th>
-                    <th>Sync</th>
+                    <th>Last Sync</th>
                 </tr>
             </thead>
         </table>
@@ -38,21 +32,18 @@
                 $('#masterTable').DataTable({
                     data: results.data,
                     columns: [
-                        { data: "Ticker", render: d => `<b>${d}</b>` },
+                        { data: "Ticker" },
                         { data: "Company" },
                         { 
                             data: "Status",
-                            render: s => s === "EARNINGS_ANNOUNCED" ? `<span class="badge badge-ai">NEW INFO</span>` : d
+                            render: s => s === "AI_RESEARCHED" ? `<span class="badge bg-primary">NEW INFO</span>` : s
                         },
                         { 
                             data: "Earnings",
-                            render: function(e) {
-                                return e.includes("Confirmed") ? `<span class="text-success fw-bold">${e}</span>` : `<span class="text-muted small">${e}</span>`;
-                            }
+                            render: e => e.includes("Confirmed") ? `<b class="text-success">${e}</b>` : e
                         },
                         { data: "LastSync" }
-                    ],
-                    order: [[0, 'asc']]
+                    ]
                 });
             }
         });
