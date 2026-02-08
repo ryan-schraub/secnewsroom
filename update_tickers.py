@@ -1,91 +1,73 @@
 import requests
 import sqlite3
 import csv
+import time
 from datetime import datetime
 
 # CONFIGURATION
 DB_FILE = 'tickers.db'
 CSV_OUTPUT = 'tickers_preview.csv'
 USER_EMAIL = "ryan.schraub@gmail.com"
-SEC_URL = "https://www.sec.gov/files/company_tickers.json"
+# SEC RSS Feed for the latest 8-Ks (This is better than scanning 10k individual folders)
+SEC_RSS_8K = "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=8-K&owner=include&output=atom"
+
+def get_legal_deadline():
+    """Returns the upcoming 10-Q deadline for 2026 Q1."""
+    # Standard deadline for Q1 2026 is May 15, 2026
+    return "2026-05-15 (Legal Max)"
 
 def main():
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
 
-    # 1. Create table with ALL columns to avoid OperationalError
+    # 1. Update Table Schema (Adding Earnings)
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS ticker_event_log (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            cik INTEGER,
-            ticker TEXT,
-            name TEXT,
-            event_scenario TEXT,
-            ai_research TEXT, 
-            is_active INTEGER,
-            timestamp DATETIME
+            cik INTEGER, ticker TEXT, name TEXT,
+            event_scenario TEXT, ai_research TEXT, 
+            next_earnings TEXT, is_active INTEGER, timestamp DATETIME
         )
     ''')
 
-    # 2. Check if this is the very first time running (Baseline)
-    cursor.execute("SELECT COUNT(*) FROM ticker_event_log")
-    is_database_empty = cursor.fetchone()[0] == 0
-    
-    # 3. Fetch SEC data
+    # 2. Baseline Run Logic
     headers = {'User-Agent': f'SecurityMasterBot ({USER_EMAIL})'}
-    response = requests.get(SEC_URL, headers=headers)
-    data = response.json()
+    master_data = requests.get("https://www.sec.gov/files/company_tickers.json", headers=headers).json()
+    
     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    incoming_ciks = {item['cik_str']: item for item in data.values()}
+    legal_max = get_legal_deadline()
 
-    for cik, info in incoming_ciks.items():
-        ticker = str(info['ticker']).upper()
-        name = info['title']
+    print(f"Starting Baseline for {len(master_data)} tickers...")
 
-        cursor.execute('''
-            SELECT ticker, name FROM ticker_event_log 
-            WHERE cik = ? ORDER BY timestamp DESC LIMIT 1
-        ''', (cik,))
-        latest = cursor.fetchone()
+    for item in master_data.values():
+        cik = item['cik_str']
+        ticker = item['ticker'].upper()
+        name = item['title']
 
-        scenario = None
-        ai_note = ""
-
-        if not latest:
-            # FIX: Use '-' for the very first run to prevent 10,000 "New Listings"
-            scenario = "-" if is_database_empty else "NEW_LISTING"
-        elif latest[0] != ticker:
-            # Handle the American Axle to Dauch rebranding specifically
-            if ticker == "DCH" and "DAUCH" in name.upper():
-                scenario = f"REBRAND: {latest[0]} → {ticker}"
-                ai_note = "American Axle (AXL) rebranded to Dauch Corp (DCH) following its acquisition of Dowlais Group to focus on EV propulsion."
-            else:
-                scenario = f"TICKER_CHANGE: {latest[0]} → {ticker}"
-                ai_note = "AI Research: Analyzing SEC filings for symbol update or merger..."
-        elif latest[1] != name:
-            scenario = f"NAME_CHANGE: {latest[1]} → {name}"
-            ai_note = "AI Research: Detected legal name change."
-
-        if scenario:
+        # Check if already in DB
+        cursor.execute("SELECT id FROM ticker_event_log WHERE cik = ?", (cik,))
+        if not cursor.fetchone():
+            # First time seeing this stock? Give it the Legal Deadline fallback
             cursor.execute('''
-                INSERT INTO ticker_event_log (cik, ticker, name, event_scenario, ai_research, is_active, timestamp)
+                INSERT INTO ticker_event_log (cik, ticker, name, event_scenario, next_earnings, is_active, timestamp)
                 VALUES (?, ?, ?, ?, ?, 1, ?)
-            ''', (cik, ticker, name, scenario, ai_note, current_time))
+            ''', (cik, ticker, name, "-", legal_max, current_time))
 
     conn.commit()
 
-    # 4. Export the most recent entry for every ticker
+    # 3. AI Research Phase: Scan recent 8-Ks for actual dates
+    # In a real setup, you would hit an LLM API here for only the most recent 100 8-Ks
+    print("AI Research phase skipped for baseline to avoid SEC rate limits.")
+
+    # 4. Export
     cursor.execute('''
-        SELECT ticker, cik, name, event_scenario, ai_research, timestamp 
-        FROM ticker_event_log t1
-        WHERE timestamp = (SELECT MAX(timestamp) FROM ticker_event_log t2 WHERE t2.cik = t1.cik)
-        AND is_active = 1
+        SELECT ticker, name, event_scenario, next_earnings, timestamp 
+        FROM ticker_event_log 
         ORDER BY ticker ASC
     ''')
-    
-    with open(CSV_OUTPUT, 'w', newline='', encoding='utf-8') as f:
+    with open(CSV_OUTPUT, 'w', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['Ticker', 'CIK', 'Name', 'Last Event', 'AI Research', 'Date Detected'])
+        writer.writerow(['Ticker', 'Company', 'Status', 'Next Earnings', 'Last Sync'])
         writer.writerows(cursor.fetchall())
 
     conn.close()
