@@ -1,11 +1,11 @@
 name: SEC Historical Sync
 on:
   schedule:
-    - cron: '0 0 * * *' # Once a day (Daily update is safer for full API sweeps)
+    - cron: '0 0 * * *' # Runs daily at midnight
   workflow_dispatch:
 
 jobs:
-  build:
+  run-all:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -17,12 +17,12 @@ jobs:
           python-version: '3.10'
       - name: Install Dependencies
         run: pip install requests
-      - name: Run Update
+      - name: Execute Script
         run: python update_tickers.py
-      - name: Commit Results
+      - name: Save Data
         run: |
           git config --global user.name "SEC-Bot"
           git config --global user.email "bot@example.com"
           git add tickers.db tickers_preview.csv
-          git commit -m "Daily Filing Refresh: $(date)" || echo "No changes"
+          git commit -m "Updated Filing Data: $(date)" || echo "No changes"
           git push
