@@ -1,6 +1,7 @@
 import requests
 import sqlite3
 import csv
+import os
 from datetime import datetime
 
 # CONFIGURATION
@@ -51,15 +52,19 @@ def main():
         ai_note = ""
 
         if not latest:
-            # FIX: Use '-' for the very first run to prevent 10,000 "New Listings"
+            # FIX: Use '-' for the baseline run to prevent 10,000 "New Listings"
             scenario = "-" if is_first_run else "NEW_LISTING"
         elif latest[0] != ticker:
-            scenario = f"TICKER_CHANGE: {latest[0]} → {ticker}"
-            # Placeholder for AI Research - You can trigger a real AI API call here
-            ai_note = "AI Research: Detecting reason for ticker swap..."
+            # Specific logic for Dauch/AAM rebranding
+            if ticker == "DCH" and "DAUCH" in name.upper():
+                scenario = f"REBRAND: AAM to Dauch ({latest[0]} → {ticker})"
+                ai_note = "Dauch Corp (formerly American Axle) rebranded following the Dowlais Group acquisition to reflect a new strategy."
+            else:
+                scenario = f"TICKER_CHANGE: {latest[0]} → {ticker}"
+                ai_note = "AI Researching: Detected ticker swap. Checking for merger, spinoff, or rebranding..."
         elif latest[1] != name:
             scenario = f"NAME_CHANGE: {latest[1]} → {name}"
-            ai_note = "AI Research: Corporate rebranding or legal name change."
+            ai_note = "AI Researching: Name update detected. Checking for corporate restructuring..."
 
         if scenario:
             cursor.execute('''
@@ -69,7 +74,7 @@ def main():
 
     conn.commit()
 
-    # 3. Export for Website (Include AI Research column)
+    # 3. Export for Website
     cursor.execute('''
         SELECT ticker, cik, name, event_scenario, ai_research, timestamp 
         FROM ticker_event_log t1
