@@ -12,18 +12,25 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+
       - name: Install Dependencies
-        run: pip install requests
+        # Added pandas and edgartools in case your engine uses them later
+        run: pip install requests pandas edgartools jinja2
+
       - name: Run SEC Sync
-        run: python update_tickers.py
+        # Pointing to the new engine folder
+        run: python engine/update_tickers.py
+
       - name: Commit and Push
         run: |
           git config --global user.name "SEC-Sync-Bot"
           git config --global user.email "bot@example.com"
+          # Adding the files from the root directory
           git add tickers.db tickers_preview.csv
-          git commit -m "Daily SEC Update: $(date)" || echo "No changes"
+          git commit -m "Daily SEC Update: $(date)" || echo "No changes to commit"
           git push
