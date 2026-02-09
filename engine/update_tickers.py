@@ -15,7 +15,7 @@ USER_EMAIL = "ryan.schraub@gmail.com"
 HEADERS = {'User-Agent': f'RyanBot ({USER_EMAIL})'}
 
 def main():
-    print(f"[{datetime.now()}] Initializing SEC Engine with Revenue Support...")
+    print(f"[{datetime.now()}] Initializing SEC Intelligence Engine...")
     conn = sqlite3.connect(DB_FILE)
     cursor = conn.cursor()
 
@@ -34,10 +34,10 @@ def main():
         )
     ''')
     
-    # Safety: Ensure revenue column exists for older database versions
+    # Ensure revenue column exists for older database versions
     try:
         cursor.execute("ALTER TABLE ticker_event_log ADD COLUMN revenue REAL")
-    except:
+    except sqlite3.OperationalError:
         pass
 
     # 2. FETCH TICKER LIST
@@ -50,21 +50,18 @@ def main():
         cik_str = str(item['cik_str']).zfill(10)
         ticker = str(item['ticker']).upper()
         
-        # Stay under SEC limit (10 requests per second)
+        # Rate limit compliance
         time.sleep(0.12) 
 
         try:
             # --- CALL 1: SUBMISSIONS (Metadata & Links) ---
-            sub_url = f"https://data.sec.gov/submissions/CIK{cik_str}.json"
-            sub_resp = requests.get(sub_url, headers=HEADERS).json()
+            sub_resp = requests.get(f"https://data.sec.gov/submissions/CIK{cik_str}.json", headers=HEADERS).json()
             
             # --- CALL 2: COMPANY FACTS (Revenue Data) ---
-            facts_url = f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik_str}.json"
-            facts_resp = requests.get(facts_url, headers=HEADERS).json()
+            facts_resp = requests.get(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik_str}.json", headers=HEADERS).json()
             
             # REVENUE EXTRACTION WATERFALL
             revenue = 0
-            # Order of reliability: Specific Revenue -> Net Sales -> Total Revenues
             tags = [
                 ('us-gaap', 'RevenueFromContractWithCustomerExcludingAssessedTax'),
                 ('us-gaap', 'SalesRevenueNet'),
@@ -78,7 +75,7 @@ def main():
                     currency = 'USD' if 'USD' in units else list(units.keys())[0]
                     points = units[currency]
                     
-                    # Filter for Annual Data (FY) to avoid quarterly confusion
+                    # Filter for Annual Data (FY) for accuracy
                     annual_points = [p for p in points if p.get('fp') == 'FY']
                     if annual_points:
                         revenue = sorted(annual_points, key=lambda x: x['end'])[-1]['val']
@@ -121,26 +118,27 @@ def main():
                 print(f"Processed {i}/{len(tickers)}: {ticker} | Revenue: ${revenue:,.0f}")
                 conn.commit()
 
-        except Exception as e:
-            # Silently skip errors to keep the sync moving
+        except Exception:
             continue
 
-    # 4. EXPORT TO CSV (Ordered by Revenue)
-    print("\nGenerating optimized CSV for frontend...")
+    # 4. EXPORT TO CSV (Corrected for Website Mapping)
+    print("\nGenerating CSV for frontend...")
+    # Explicitly selecting lowercase column names to match table schema
     cursor.execute("""
-        SELECT Ticker, Name, Location, Industry, Revenue, last_10k, link_10k 
+        SELECT ticker, name, location, industry, revenue, last_10k, link_10k 
         FROM ticker_event_log 
         ORDER BY revenue DESC
     """)
     
     with open(CSV_OUTPUT, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
+        # These headers match the 'data' keys in your index.html
         writer.writerow(['Ticker', 'Company', 'Location', 'Industry', 'Revenue', '10K_Date', '10K_Link'])
         writer.writerows(cursor.fetchall())
     
     conn.commit()
     conn.close()
-    print(f"[{datetime.now()}] Engine Finished. Revenue data is now live.")
+    print(f"[{datetime.now()}] Engine Finished. Revenue and metadata are now synced.")
 
 if __name__ == "__main__":
     main()
