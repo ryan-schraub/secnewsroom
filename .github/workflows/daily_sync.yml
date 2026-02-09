@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # Required for smooth rebasing
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -21,20 +21,22 @@ jobs:
           python-version: '3.10'
 
       - name: Install Dependencies
-        run: pip install requests pandas edgartools jinja2 sqlite3
+        run: pip install requests pandas edgartools jinja2
 
-      - name: Run SEC Sync
+      - name: Run SEC Intelligence Engine
+        # This now handles BOTH ticker sync and revenue enrichment
         continue-on-error: true
         run: python engine/update_tickers.py
-
-      - name: Run Revenue Enrichment
-        continue-on-error: true
-        run: python engine/enrich_revenue.py
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Pull latest changes to avoid "[rejected]" errors
           git pull --rebase origin main
+          
           git add tickers.db tickers_preview.csv
+          
+          # Only commit if there are actual changes
           git diff --quiet && git diff --staged --quiet || (git commit -m "SEC Update: $(date +'%Y-%m-%d')" && git push origin main)
