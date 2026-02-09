@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Required for smooth rebasing
+          fetch-depth: 0 
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -24,7 +24,6 @@ jobs:
         run: pip install requests pandas edgartools jinja2
 
       - name: Run SEC Intelligence Engine
-        # This combined script handles ticker sync and revenue enrichment
         continue-on-error: true
         run: python engine/update_tickers.py
 
@@ -33,11 +32,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          # 1. Stage changes FIRST to avoid the "unstaged changes" rebase error
+          # 1. Autostash handles the "unstaged changes" rebase error
+          git pull --rebase --autostash origin main
+          
+          # 2. Stage the new files
           git add tickers.db tickers_preview.csv
           
-          # 2. Pull with rebase now that changes are staged
-          git pull --rebase origin main
-          
-          # 3. Only commit and push if there is actually new data to save
+          # 3. Commit and push
           git diff --quiet --staged || (git commit -m "SEC Update: $(date +'%Y-%m-%d')" && git push origin main)
