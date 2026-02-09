@@ -7,10 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        :root { --navy: #0F172A; --accent: #3B82F6; --bg: #F8FAFC; }
+        :root { --navy: #0F172A; --accent: #3B82F6; --bg: #F8FAFC; --growth: #10B981; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--navy); }
         .analysis-card { background: white; padding: 40px; border-radius: 20px; border: 1px solid #e2e8f0; margin-top: 50px; }
         .ticker-header { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-weight: 700; }
+        .stat-value { font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+        .revenue-highlight { color: var(--growth); font-size: 1.5rem; }
     </style>
 </head>
 <body>
@@ -20,23 +22,36 @@
         <a href="index.html" class="btn btn-outline-secondary btn-sm mb-4">← Back to Terminal</a>
         <h5 class="text-muted small fw-bold">INSTITUTIONAL ANALYSIS</h5>
         <h1 class="fw-bold">Financial Intelligence for <span id="displayTicker" class="ticker-header">---</span></h1>
+        <p class="lead text-secondary" id="companyName">Loading company profile...</p>
         <hr>
         <div class="row mt-4">
             <div class="col-md-8">
                 <h3>Executive Summary</h3>
-                <p>This page provides a deep-dive analysis into the recent SEC filings for <strong class="targetTicker">---</strong>. Our system is currently parsing the latest 10-K and 10-Q data to generate a comprehensive revenue bridge and risk assessment.</p>
+                <p>This page provides a deep-dive analysis into the recent SEC filings for <strong class="targetTicker">---</strong>. Our system has parsed the latest 10-K data to identify core financial metrics and industry positioning.</p>
+                
+                <div class="p-4 bg-light rounded mb-4">
+                    <h6 class="text-uppercase small fw-bold text-muted">Latest Annual Revenue (LTM)</h6>
+                    <div class="revenue-highlight fw-bold" id="displayRevenue">$0.00</div>
+                </div>
+
                 <div class="alert alert-info">
                     <strong>Note:</strong> Quantitative models for <span class="targetTicker">---</span> are updated every 24 hours following SEC EDGAR syncs.
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="p-3 bg-light rounded border">
-                    <h6>Quick Stats</h6>
+                <div class="p-3 bg-white rounded border">
+                    <h6 class="fw-bold mb-3">Quick Stats</h6>
                     <div class="d-flex justify-content-between border-bottom py-2">
                         <span>Status:</span> <span class="badge bg-success">Active</span>
                     </div>
+                    <div class="d-flex justify-content-between border-bottom py-2">
+                        <span>Ticker:</span> <span class="stat-value targetTicker">---</span>
+                    </div>
+                    <div class="d-flex justify-content-between border-bottom py-2">
+                        <span>Industry:</span> <span class="stat-value small text-end" id="displayIndustry">---</span>
+                    </div>
                     <div class="d-flex justify-content-between py-2">
-                        <span>Ticker:</span> <span class="fw-bold targetTicker">---</span>
+                        <span>Location:</span> <span class="stat-value small text-end" id="displayLocation">---</span>
                     </div>
                 </div>
             </div>
@@ -44,19 +59,55 @@
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
 <script>
-    // Logic to grab the ticker from the URL (e.g., analysis.html?ticker=aapl)
     const urlParams = new URLSearchParams(window.location.search);
-    const ticker = urlParams.get('ticker')?.toUpperCase() || 'UNKNOWN';
+    const tickerParam = urlParams.get('ticker')?.toUpperCase() || 'UNKNOWN';
 
-    // Update the page content dynamically
-    document.getElementById('displayTicker').innerText = ticker;
-    document.getElementById('pageTitle').innerText = `${ticker} Analysis | SEC Newsroom`;
-    
-    // Update all elements with the class 'targetTicker'
-    document.querySelectorAll('.targetTicker').forEach(el => {
-        el.innerText = ticker;
-    });
+    // Formatting helper
+    function formatCurrency(val) {
+        if (!val || val === "N/A" || isNaN(val)) return "Data Unavailable";
+        const num = parseFloat(val);
+        if (num >= 1.0e+12) return "$" + (num / 1.0e+12).toFixed(2) + "T";
+        if (num >= 1.0e+9) return "$" + (num / 1.0e+9).toFixed(2) + "B";
+        if (num >= 1.0e+6) return "$" + (num / 1.0e+6).toFixed(2) + "M";
+        return "$" + num.toLocaleString();
+    }
+
+    // Lookup data from CSV
+    async function loadAnalysisData() {
+        try {
+            const response = await fetch('tickers_preview.csv');
+            const csvData = await response.text();
+            
+            Papa.parse(csvData, {
+                header: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    // Find the specific row for this ticker
+                    // Note: Ensure 'Ticker' matches your CSV header casing exactly
+                    const companyData = results.data.find(row => row.Ticker === tickerParam);
+
+                    if (companyData) {
+                        document.getElementById('displayTicker').innerText = tickerParam;
+                        document.getElementById('companyName').innerText = companyData.Company || 'Company Name Unknown';
+                        document.getElementById('displayRevenue').innerText = formatCurrency(companyData.Revenue);
+                        document.getElementById('displayIndustry').innerText = companyData.Industry || 'N/A';
+                        document.getElementById('displayLocation').innerText = companyData.Location || 'N/A';
+                        
+                        document.getElementById('pageTitle').innerText = `${tickerParam} Analysis | SEC Newsroom`;
+                        document.querySelectorAll('.targetTicker').forEach(el => el.innerText = tickerParam);
+                    } else {
+                        document.getElementById('companyName').innerText = "Ticker not found in database.";
+                    }
+                }
+            });
+        } catch (err) {
+            console.error("Error loading CSV for analysis:", err);
+        }
+    }
+
+    loadAnalysisData();
 </script>
 </body>
 </html>
