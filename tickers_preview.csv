@@ -18,7 +18,7 @@ AKO-B,ANDINA BOTTLING CO INC,SANTIAGO CHILE,Bottled & Canned Soft Drinks & Carbo
 PTCCY,PETROCHINA CO LTD,BEIJING,Crude Petroleum & Natural Gas,3237870000000.0,N/A,
 HNDAF,HONDA MOTOR CO LTD,"TOKYO, JAPAN",Motor Vehicles & Passenger Car Bodies,3097246000000.0,N/A,
 TSMWF,TAIWAN SEMICONDUCTOR MANUFACTURING CO LTD,HSINCHU,Semiconductors & Related Devices,2894307700000.0,N/A,
-KYOCY,KYOCERA CORP,KYOTO,Semiconductors & Related Devices,1577039000000.0,N/A,
+KYOCF,KYOCERA CORP,KYOTO,Semiconductors & Related Devices,1577039000000.0,N/A,
 ORXCF,ORIX CORP,TOKYO,Miscellaneous Business Credit Institution,1352263000000.0,N/A,
 TGS,GAS TRANSPORTER OF THE SOUTH INC,ARGENTINA,Natural Gas Transmission,1206612985000.0,N/A,
 NRSCF,NOMURA HOLDINGS INC,TOKYO,"Security Brokers, Dealers & Flotation Companies",1068662000000.0,N/A,
@@ -29,7 +29,7 @@ UNH,UNITEDHEALTH GROUP INC,EDEN PRAIRIE,Hospital & Medical Service Plans,4475670
 AAPL,Apple Inc.,CUPERTINO,Electronic Computers,416161000000.0,2025-09-27,https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm
 MCK,MCKESSON CORP,IRVING,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",403430000000.0,2026-03-31,https://www.sec.gov/Archives/edgar/data/927653/000092765326000069/mck-20260331.htm
 CNCKW,Coincheck Group N.V.,1012 SJ AMSTERDAM,Finance Services,383205000000.0,N/A,
-GOOG,Alphabet Inc.,MOUNTAIN VIEW,"Services-Computer Programming, Data Processing, Etc.",350018000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm
+GGLBP,Alphabet Inc.,MOUNTAIN VIEW,"Services-Computer Programming, Data Processing, Etc.",350018000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm
 COR,"Cencora, Inc.",CONSHOHOCKEN,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",321332819000.0,2025-09-30,https://www.sec.gov/Archives/edgar/data/1140859/000114085925000131/cor-20250930.htm
 ALMMF,ALUMINUM CORP OF CHINA LTD,"HAIDIAN DISTRICT, BEIJING",Primary Production of  Aluminum,290671122000.0,N/A,
 MSFT,MICROSOFT CORP,REDMOND,Services-Prepackaged Software,281724000000.0,2025-06-30,https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm
@@ -86,7 +86,7 @@ CHKIF,CHINA SOUTHERN AIRLINES CO LTD,PEOPLES REPUBLIC OF CHINA,"Air Transportati
 LOW,LOWES COMPANIES INC,MOORESVILLE,Retail-Lumber & Other Building Materials Dealers,86286000000.0,2026-01-30,https://www.sec.gov/Archives/edgar/data/60667/000006066726000029/low-20260130.htm
 ET-PI,Energy Transfer LP,DALLAS,Natural Gas Transmission,85536000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1276187/000127618726000013/et-20251231.htm
 C-PR,CITIGROUP INC,NEW YORK,National Commercial Banks,85225000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/831001/000083100126000011/c-20251231.htm
-WFC-PA,WELLS FARGO & COMPANY/MN,SAN FRANCISCO,National Commercial Banks,85063000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/72971/000007297126000133/wfc-20251231_d2.htm
+WFC-PZ,WELLS FARGO & COMPANY/MN,SAN FRANCISCO,National Commercial Banks,85063000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/72971/000007297126000133/wfc-20251231_d2.htm
 ACI,"Albertsons Companies, Inc.",BOISE,Retail-Grocery Stores,83172500000.0,2026-02-28,https://www.sec.gov/Archives/edgar/data/1646972/000164697226000032/aci-20260228.htm
 EIPAF,ENI SPA,ROME ITALY,Crude Petroleum & Natural Gas,82151000000.0,N/A,
 SYY,SYSCO CORP,HOUSTON,Wholesale-Groceries & Related Products,81370000000.0,2025-06-28,https://www.sec.gov/Archives/edgar/data/96021/000009602125000099/syy-20250628.htm
@@ -103,7 +103,7 @@ SNX,TD SYNNEX CORP,FREMONT,Wholesale-Computers & Peripheral Equipment & Software
 PDD,PDD Holdings Inc.,DUBLIN 2,"Services-Business Services, NEC",61753116000.0,N/A,
 ARCXF,ArcelorMittal,GRAND DUCHY OF LUXEMBOURG,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",61352000000.0,N/A,
 ABBV,AbbVie Inc.,NORTH CHICAGO,Pharmaceutical Preparations,61160000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm
-BRPSF,BROOKFIELD Corp /ON/,TORONTO,Opeators of  Nonresidential Buildings,60400000000.0,N/A,
+BXDIF,BROOKFIELD Corp /ON/,TORONTO,Opeators of  Nonresidential Buildings,60400000000.0,N/A,
 GLXY,Galaxy Digital Inc.,NEW YORK,"Security Brokers, Dealers & Flotation Companies",60243860000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1859392/000185939226000016/glxy-20251231.htm
 LMT,LOCKHEED MARTIN CORP,BETHESDA,Guided Missiles & Space Vehicles & Parts,59812000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/936468/000162828026004195/lmt-20251231.htm
 CB,Chubb Ltd,ZURICH,"Fire, Marine & Casualty Insurance",59402000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/896159/000089615926000005/cb-20251231.htm
@@ -169,7 +169,7 @@ OKE,ONEOK INC /NEW/,TULSA,Natural Gas Transmisison & Distribution,33629000000.0,
 MDT,Medtronic plc,GALWAY,Electromedical & Electrotherapeutic Apparatus,33537000000.0,2025-04-25,https://www.sec.gov/Archives/edgar/data/1613103/000161310325000091/mdt-20250425.htm
 ASMLF,ASML HOLDING NV,DR VELDHOVEN,"Special Industry Machinery, NEC",32667300000.0,N/A,
 NUE,NUCOR CORP,CHARLOTTE,"Steel Works, Blast Furnaces & Rolling Mills (Coke Ovens)",32494000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/73309/000119312526071575/nue-20251231.htm
-ABLZF,ABB LTD,ZURICH SWITZERLAND,Switchgear & Switchboard Apparatus,32235000000.0,N/A,
+ABBNY,ABB LTD,ZURICH SWITZERLAND,Switchgear & Switchboard Apparatus,32235000000.0,N/A,
 APOS,"Apollo Global Management, Inc.",NEW YORK,Investment Advice,32049000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1858681/000185868126000013/apo-20251231.htm
 UNFI,UNITED NATURAL FOODS INC,PROVIDENCE,"Wholesale-Groceries, General Line",31784000000.0,2025-08-02,https://www.sec.gov/Archives/edgar/data/1020859/000102085925000054/unfi-20250802.htm
 ASRMF,SOUTHEAST AIRPORT GROUP,BOSQUES DE LAS LOMAS,"Airports, Flying Fields & Airport Terminal Services",31332787000.0,N/A,
@@ -295,7 +295,7 @@ EG,"EVEREST GROUP, LTD.",HAMILTON,"Fire, Marine & Casualty Insurance",1749600000
 RYLPF,KONINKLIJKE PHILIPS NV,AMSTERDAM,X-Ray Apparatus & Tubes & Related Irradiation Apparatus,17461000000.0,N/A,
 CTVA,"Corteva, Inc.",INDIANAPOLIS,Agricultural Production-Crops,17401000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1755672/000175567226000004/ctva-20251231.htm
 UHS,UNIVERSAL HEALTH SERVICES INC,KING OF PRUSSIA,"Services-General Medical & Surgical Hospitals, NEC",17364829000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/352915/000119312526071676/uhs-20251231.htm
-ALL-PB,ALLSTATE CORP,NORTHBROOK,"Fire, Marine & Casualty Insurance",17345000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/899051/000089905126000031/all-20251231.htm
+ALL-PJ,ALLSTATE CORP,NORTHBROOK,"Fire, Marine & Casualty Insurance",17345000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/899051/000089905126000031/all-20251231.htm
 PHM,PULTEGROUP INC/MI/,ATLANTA,Operative Builders,17311953000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/822416/000082241626000007/phm-20251231.htm
 CNI,CANADIAN NATIONAL RAILWAY CO,CANADA,"Railroads, Line-Haul Operating",17304000000.0,N/A,
 OMC,OMNICOM GROUP INC.,NEW YORK,Services-Advertising Agencies,17271900000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/29989/000002998926000006/omc-20251231.htm
@@ -656,7 +656,7 @@ EHC,Encompass Health Corp,BIRMINGHAM,Services-Hospitals,5935200000.0,2025-12-31,
 AGL,"agilon health, inc.",WESTERVILLE,"Services-Misc Health & Allied Services, NEC",5932576000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1831097/000162828026011655/agl-20251231.htm
 SNAP,Snap Inc,SANTA MONICA,"Services-Computer Programming, Data Processing, Etc.",5931447000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1564408/000156440826000013/snap-20251231.htm
 DUK-PA,Duke Energy CORP,CHARLOTTE,Electric & Other Services Combined,5928000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1326160/000132616026000014/duk-20251231.htm
-MS-PQ,MORGAN STANLEY,NEW YORK,"Security Brokers, Dealers & Flotation Companies",5910000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/895421/000089542126000086/ms-20251231.htm
+MS-PA,MORGAN STANLEY,NEW YORK,"Security Brokers, Dealers & Flotation Companies",5910000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/895421/000089542126000086/ms-20251231.htm
 BRO,"BROWN & BROWN, INC.",DAYTONA BEACH,"Insurance Agents, Brokers & Service",5902000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/79282/000119312526046984/bro-20251231.htm
 LYFT,"Lyft, Inc.",SAN FRANCISCO,"Services-Business Services, NEC",5895475000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1759509/000162828026006960/lyft-20251231.htm
 COTY,COTY INC.,NEW YORK,"Perfumes, Cosmetics & Other Toilet Preparations",5892900000.0,2025-06-30,https://www.sec.gov/Archives/edgar/data/1024305/000102430525000030/coty-20250630.htm
@@ -1140,7 +1140,7 @@ JKHY,JACK HENRY & ASSOCIATES INC,MONETT,Services-Computer Integrated Systems Des
 AMP,AMERIPRISE FINANCIAL INC,MINNEAPOLIS,Investment Advice,2374000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/820027/000082002726000011/amp-20251231.htm
 BZH,BEAZER HOMES USA INC,ATLANTA,Operative Builders,2371555000.0,2025-09-30,https://www.sec.gov/Archives/edgar/data/915840/000091584025000075/bzh-20250930.htm
 ITRI,"ITRON, INC.",LIBERTY LAKE,Instruments For Meas & Testing of  Electricity & Elec Signals,2367194000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/780571/000078057126000033/itri-20251231.htm
-DTG,DTE ENERGY CO,DETROIT,Electric Services,2349000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/936340/000093634026000054/dte-20251231.htm
+DTB,DTE ENERGY CO,DETROIT,Electric Services,2349000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/936340/000093634026000054/dte-20251231.htm
 HIMS,"Hims & Hers Health, Inc.",SAN FRANCISCO,Services-Offices & Clinics of  Doctors of  Medicine,2347637000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1773751/000177375126000022/hims-20251231.htm
 BKKT-WT,"Bakkt Holdings, Inc.",NEW YORK,Finance Services,2335243000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1820302/000162828026019870/bakkt-20251231.htm
 SSD,"Simpson Manufacturing Co., Inc.",PLEASANTON,"Cutlery, Handtools & General Hardware",2332808000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/920371/000162828026012920/ssd-20251231.htm
@@ -1190,7 +1190,7 @@ WEN,Wendy's Co,DUBLIN,Retail-Eating & Drinking Places,2176891000.0,2025-12-28,ht
 NET,"Cloudflare, Inc.",SAN FRANCISCO,Services-Prepackaged Software,2167937000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1477333/000147733326000016/cloud-20251231.htm
 CON,"Concentra Group Holdings Parent, Inc.",ADDISON,"Services-Specialty Outpatient Facilities, NEC",2163417000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2014596/000201459626000029/cghp-20251231.htm
 SSP,E.W. SCRIPPS Co,CININNATI,Television Broadcasting Stations,2150585000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/832428/000083242826000010/ssp-20251231.htm
-KIM-PN,KIMCO REALTY CORP,JERICHO,Real Estate Investment Trusts,2140116000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/879101/000119312526060760/kim-20251231.htm
+KIM-PM,KIMCO REALTY CORP,JERICHO,Real Estate Investment Trusts,2140116000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/879101/000119312526060760/kim-20251231.htm
 TXNM,TXNM ENERGY INC,ALBUQUERQUE,Electric Services,2136924000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1108426/000110842626000006/pnm-20251231.htm
 TTEC,"TTEC Holdings, Inc.",AUSTIN,Services-Help Supply Services,2136899000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1013880/000110465926020532/ttec-20251231x10k.htm
 DLX,DELUXE CORP,MINNEAPOLIS,"Blankbooks, Looseleaf Binders & Bookbindg & Relatd Work",2133200000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/27996/000002799626000037/dlx-20251231.htm
@@ -1226,7 +1226,7 @@ DT,"Dynatrace, Inc.",BOSTON,Services-Prepackaged Software,2018387000.0,2026-03-3
 DXPE,DXP ENTERPRISES INC,HOUSTON,Wholesale-Industrial Machinery & Equipment,2016365000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1020710/000162828026012382/dxpe-20251231.htm
 WLK,WESTLAKE CORP,HOUSTON,Industrial Organic Chemicals,2010000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1262823/000126282326000016/wlk-20251231.htm
 ZTOEF,ZTO Express (Cayman) Inc.,SHANGHAI,Trucking & Courier Services (No Air),2007296000.0,N/A,
-KKR-PD,KKR & Co. Inc.,NEW YORK,Investment Advice,2006791000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1404912/000140491226000007/kkr-20251231.htm
+KKRS,KKR & Co. Inc.,NEW YORK,Investment Advice,2006791000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1404912/000140491226000007/kkr-20251231.htm
 BE,Bloom Energy Corp,SAN JOSE,Electrical Industrial Apparatus,2001614000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1664703/000162828026006516/be-20251231.htm
 CRUS,"CIRRUS LOGIC, INC.",AUSTIN,Semiconductors & Related Devices,1997379000.0,2026-03-28,https://www.sec.gov/Archives/edgar/data/772406/000077240626000018/crus-20260328.htm
 HII,"HUNTINGTON INGALLS INDUSTRIES, INC.",NEWPORT NEWS,Ship & Boat Building & Repairing,1996000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1501585/000150158526000006/hii-20251231.htm
@@ -1524,7 +1524,7 @@ EZPW,EZCORP INC,ROLLINGWOOD,Retail-Miscellaneous Retail,1274280000.0,2025-09-30,
 TEM,"Tempus AI, Inc.",CHICAGO,"Services-Computer Programming, Data Processing, Etc.",1271789000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1717115/000119312526066961/tem-20251231.htm
 PUMP,ProPetro Holding Corp.,MIDLAND,"Oil & Gas Field Services, NEC",1269158000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1680247/000168024726000028/pump-20251231.htm
 STRA,"Strategic Education, Inc.",HERNDON,Services-Educational Services,1268220000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1013934/000101393426000006/stra-20251231.htm
-CURLF,"Curaleaf Holdings, Inc.",NEW YORK,Medicinal Chemicals & Botanical Products,1268135000.0,N/A,
+CURLD,"Curaleaf Holdings, Inc.",NEW YORK,Medicinal Chemicals & Botanical Products,1268135000.0,N/A,
 SFIX,"Stitch Fix, Inc.",SAN FRANCISCO,Retail-Catalog & Mail-Order Houses,1267171000.0,2025-08-02,https://www.sec.gov/Archives/edgar/data/1576942/000162828025042782/sfix-20250802.htm
 DOX,AMDOCS LTD,ST. PETER PORT,Services-Computer Programming Services,1263882000.0,N/A,
 VTOL,Bristow Group Inc.,HOUSTON,"Air Transportation, Nonscheduled",1263855000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1525221/000152522126000013/vtol-20251231.htm
@@ -1533,7 +1533,7 @@ ESNT,Essent Group Ltd.,HAMILTON,Surety Insurance,1260935000.0,2025-12-31,https:/
 DBD,"DIEBOLD NIXDORF, Inc",NORTH CANTON,Calculating & Accounting Machines (No Electronic Computers),1249900000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/28823/000002882326000008/dbd-20251231.htm
 NCLH,Norwegian Cruise Line Holdings Ltd.,MIAMI,Water Transportation,1249553000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1513761/000110465926022067/nclh-20251231x10k.htm
 GTM,ZoomInfo Technologies Inc.,VANCOUVER,Services-Prepackaged Software,1249500000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1794515/000179451526000012/zi-20251231.htm
-SENEL,Seneca Foods Corp,MARION,"Canned, Fruits, Veg, Preserves, Jams & Jellies",1245681000.0,2025-03-31,https://www.sec.gov/Archives/edgar/data/88948/000143774925020197/senea20250331_10k.htm
+SENEM,Seneca Foods Corp,MARION,"Canned, Fruits, Veg, Preserves, Jams & Jellies",1245681000.0,2025-03-31,https://www.sec.gov/Archives/edgar/data/88948/000143774925020197/senea20250331_10k.htm
 ALLY,Ally Financial Inc.,DETROIT,State Commercial Banks,1244000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/40729/000004072926000005/ally-20251231.htm
 CMP,COMPASS MINERALS INTERNATIONAL INC,OVERLAND PARK,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),1243900000.0,2025-09-30,https://www.sec.gov/Archives/edgar/data/1227654/000122765425000199/cmp-20250930.htm
 DTM,"DT Midstream, Inc.",DETROIT,Natural Gas Transmission,1243000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1842022/000184202226000003/dtm-20251231.htm
@@ -2156,7 +2156,6 @@ TTGT,"TechTarget, Inc.",NEWTON,Telegraph & Other Message Communications,48679100
 LMB,"Limbach Holdings, Inc.",WARRENDALE,Construction - Special Trade Contractors,485739000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1606163/000162828026013285/lmb-20251231.htm
 ODC,Oil-Dri Corp of America,CHICAGO,Miscellaneous Manufacturing Industries,485572000.0,2025-07-31,https://www.sec.gov/Archives/edgar/data/74046/000162828025044686/odc-20250731.htm
 BDN,BRANDYWINE REALTY TRUST,PHILADELPHIA,Real Estate Investment Trusts,484454000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/790816/000079081626000008/bdn-20251231.htm
-BARK,"Bark, Inc.",NEW YORK,"Retail-Retail Stores, NEC",484182000.0,2025-03-31,https://www.sec.gov/Archives/edgar/data/1819574/000181957425000024/bark-20250331.htm
 RYN,RAYONIER INC,WILDLIGHT,Real Estate Investment Trusts,483035000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/52827/000005282726000036/ryn-20251231.htm
 NATR,NATURES SUNSHINE PRODUCTS INC,LEHI,Pharmaceutical Preparations,480144000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/275053/000162828026016540/natr-20251231.htm
 FUFUW,Bitfufu Inc.,SINGAPORE,Finance Services,477532000.0,N/A,
@@ -2172,7 +2171,7 @@ KRMN,Karman Holdings Inc.,HUNTINGTON BEACH,"Aircraft Parts & Auxiliary Equipment
 PRPL,"Purple Innovation, Inc.",LEHI,Household Furniture,468725000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1643953/000121390026036974/ea0274767-10k_purple.htm
 EVH,"Evolent Health, Inc.",ARLINGTON,Services-Management Services,468719000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1628908/000162890826000015/evh-20251231.htm
 HIPOW,Hippo Holdings Inc.,SAN JOSE,"Fire, Marine & Casualty Insurance",468600000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1828105/000182810526000008/hippo-20251231.htm
-CODI-PC,Compass Diversified Holdings,WESTPORT,Household Furniture,468557000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1345126/000134512626000026/codi-20251231.htm
+CODI-PA,Compass Diversified Holdings,WESTPORT,Household Furniture,468557000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1345126/000134512626000026/codi-20251231.htm
 PHR,"Phreesia, Inc.",WILMINGTON,"Services-Business Services, NEC",467819000.0,2026-01-31,https://www.sec.gov/Archives/edgar/data/1412408/000141240826000079/phr-20260131.htm
 KRT,Karat Packaging Inc.,CHINO,"Plastics Products, NEC",467743000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1758021/000175802126000010/krt-20251231.htm
 MXL,"MAXLINEAR, INC",CARLSBAD,Semiconductors & Related Devices,467641000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1288469/000128846926000011/mxl-20251231.htm
@@ -2277,6 +2276,7 @@ BRCC,BRC Inc.,WEST VALLEY CITY,Beverages,398263000.0,2025-12-31,https://www.sec.
 FORR,"FORRESTER RESEARCH, INC.",CAMBRIDGE,"Services-Engineering, Accounting, Research, Management",396888000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1023313/000119312526105114/forr-20251231.htm
 ALTO,"Alto Ingredients, Inc.",SACRAMENTO,Industrial Organic Chemicals,395271000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/778164/000121390026027687/ea0280136-10k_alto.htm
 BH,Biglari Holdings Inc.,SAN ANTONIO,Retail-Eating  Places,395261000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1726173/000162828026012987/bh-20251231.htm
+BARK,"Bark, Inc.",NEW YORK,"Retail-Retail Stores, NEC",394843000.0,2026-03-31,https://www.sec.gov/Archives/edgar/data/1819574/000162828026042242/bark-20260331.htm
 LX,LexinFintech Holdings Ltd.,SHENZHEN,Finance Services,394531000.0,N/A,
 GLNG,GOLAR LNG LTD,HAMILTON,Water Transportation,393522000.0,N/A,
 ZHIHF,Zhihu Inc.,BEIJING,"Services-Business Services, NEC",393103000.0,N/A,
@@ -2289,7 +2289,7 @@ AI,"C3.ai, Inc.",REDWOOD CITY,Services-Prepackaged Software,389056000.0,2025-04-
 TFPM,Triple Flag Precious Metals Corp.,TORONTO,Mineral Royalty Traders,388704000.0,N/A,
 LIFE,Ethos Technologies Inc.,AUSTIN,"Insurance Agents, Brokers & Service",387608000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1788451/000119312526108887/life-20251231.htm
 DDD,3D SYSTEMS CORP,ROCK HILL,Services-Prepackaged Software,386902000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/910638/000162828026015997/ddd-20251231.htm
-OCTVV,Octave Intelligence Ltd,COBHAM,Services-Prepackaged Software,386501000.0,N/A,
+OCTLF,Octave Intelligence Ltd,COBHAM,Services-Prepackaged Software,386501000.0,N/A,
 SVA,SINOVAC BIOTECH LTD,BEIJING,Pharmaceutical Preparations,386013000.0,N/A,
 MED,MEDIFAST INC,BALTIMORE,Miscellaneous Food Preparations & Kindred Products,385788000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/910329/000162828026008656/med-20251231.htm
 AAON,"AAON, INC.",TULSA,Air-Cond & Warm Air Heatg Equip & Comm & Indl Refrig Equip,385724000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/824142/000082414226000005/aaon-20251231.htm
@@ -2483,7 +2483,7 @@ VMD,"VIEMED HEALTHCARE, INC.",LAFAYETTE,"Services-Misc Health & Allied Services,
 HAFC,HANMI FINANCIAL CORP,LOS ANGELES,National Commercial Banks,270165000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1109242/000119312526082425/hafc-20251231.htm
 KNOP,KNOT Offshore Partners LP,ABERDEEN,Water Transportation,269306000.0,N/A,
 CGC,Canopy Growth Corp,SMITH FALLS,Medicinal Chemicals & Botanical Products,268995000.0,2025-03-31,https://www.sec.gov/Archives/edgar/data/1737927/000095017025079317/cgc-20250331.htm
-VREOF,Vireo Growth Inc.,MINNEAPOLIS,Pharmaceutical Preparations,268769268.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1771706/000110465926029561/vreof-20251231x10k.htm
+VREOD,Vireo Growth Inc.,MINNEAPOLIS,Pharmaceutical Preparations,268769268.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1771706/000110465926029561/vreof-20251231x10k.htm
 LGNYZ,LIGAND PHARMACEUTICALS INC,SAN DIEGO,Pharmaceutical Preparations,268087000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/886163/000088616326000006/lgnd-20251231.htm
 KRP,"Kimbell Royalty Partners, LP",FORT WORTH,Crude Petroleum & Natural Gas,267584785.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1657788/000110465926020477/krp-20251231x10k.htm
 MPX,MARINE PRODUCTS CORP,ATLANTA,Ship & Boat Building & Repairing,267316000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1129155/000110465926021478/mpx-20251231x10k.htm
@@ -2696,6 +2696,7 @@ GEMI,"Gemini Space Station, Inc.",NEW YORK,Finance Services,179572000.0,2025-12-
 PETS,PETMED EXPRESS INC,DELRAY BEACH,Retail-Drug Stores and Proprietary Stores,179021000.0,2026-03-31,https://www.sec.gov/Archives/edgar/data/1040130/000104013026000019/pets-20260331.htm
 NRDY,Nerdy Inc.,ST. LOUIS,Services-Educational Services,178988000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1819404/000181940426000015/nrdy-20251231.htm
 GOLD,"Gold.com, Inc.",COSTA MESA,"Wholesale-Jewelry, Watches, Precious Stones & Metals",178200000.0,2025-06-30,https://www.sec.gov/Archives/edgar/data/1591588/000119312525200462/amrk-20250630.htm
+ADAPY,Adaptimmune Therapeutics PLC,"ABINGDON, OXFORDSHIRE","Biological Products, (No Diagnostic Substances)",178032000.0,2024-12-31,https://www.sec.gov/Archives/edgar/data/1621227/000155837025003544/adap-20241231x10k.htm
 COLB,"COLUMBIA BANKING SYSTEM, INC.",TACOMA,State Commercial Banks,177000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/887343/000088734326000088/colb-20251231.htm
 AFRIW,Forafric Global PLC,GIBRALTAR,Grain Mill Products,176488000.0,N/A,
 SOHOB,Sotherly Hotels Inc.,WILLIAMSBURG,Real Estate Investment Trusts,176387228.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1301236/000119312526157013/soho-20251231.htm
@@ -3125,7 +3126,7 @@ VLN-WT,Valens Semiconductor Ltd.,"HOD HASHARON, 4501309",Semiconductors & Relate
 AIP,"Arteris, Inc.",CAMPBELL,Semiconductors & Related Devices,70579000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1667011/000162828026007726/aip-20251231.htm
 EDAP,EDAP TMS SA,69120 VAULX EN VELIN,Electromedical & Electrotherapeutic Apparatus,70527000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1041934/000110465926034528/edap-20251231x10k.htm
 CDXS,"CODEXIS, INC.",REDWOOD CITY,Industrial Organic Chemicals,70387000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1200375/000120037526000006/cdxs-20251231.htm
-LTCHW,"Latch, Inc.",OLIVETTE,Wholesale-Hardware,70117000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1826000/000182600026000030/lat-20251231.htm
+LTCH,"Latch, Inc.",OLIVETTE,Wholesale-Hardware,70117000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1826000/000182600026000030/lat-20251231.htm
 AERTW,"Aeries Technology, Inc.",GEORGE TOWN,Services-Management Consulting Services,70014000.0,2026-03-31,https://www.sec.gov/Archives/edgar/data/1853044/000182912626006123/aeriestech_10k.htm
 TXMD,"TherapeuticsMD, Inc.",BOCA RATON,Pharmaceutical Preparations,69963000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/25743/000121390026036515/ea0275992-10k_therape.htm
 FEIM,FREQUENCY ELECTRONICS INC,MITCHEL FIELD,Instruments For Meas & Testing of  Electricity & Elec Signals,69811000.0,2025-04-30,https://www.sec.gov/Archives/edgar/data/39020/000118518525000806/feim10k043025.htm
@@ -3422,7 +3423,7 @@ INVUP,"Investview, Inc.",HAVERFORD,"Services-Business Services, NEC",36255669.0,
 IDWM,"IDW MEDIA HOLDINGS, INC.",NEWARK,Services-Advertising,36094000.0,2022-10-31,https://www.sec.gov/Archives/edgar/data/1463833/000121390023003814/f10k2022_idwmedia.htm
 UCB,UNITED COMMUNITY BANKS INC,GREENVILLE,State Commercial Banks,35997000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/857855/000085785526000008/ucbi-20251231.htm
 CCCC,"C4 Therapeutics, Inc.",WATERTOWN,"Biological Products, (No Diagnostic Substances)",35947000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1662579/000162828026012000/cccc-20251231.htm
-CNTMD,"ConnectM Technology Solutions, Inc.",MARLBOROUGH,Construction - Special Trade Contractors,35836809.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1895249/000110465926044467/cntm-20251231x10k.htm
+CNTM,"ConnectM Technology Solutions, Inc.",MARLBOROUGH,Construction - Special Trade Contractors,35836809.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1895249/000110465926044467/cntm-20251231x10k.htm
 DYNTQ,DYNATRONICS CORP,SALT LAKE CITY,Surgical & Medical Instruments & Apparatus,35758330.0,2025-06-30,https://www.sec.gov/Archives/edgar/data/720875/000106299325016039/form10k.htm
 ZSTK,Flora Growth Corp.,TORONTO,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",35676000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1790169/000106299326001203/form10k.htm
 DUO,Fangdd Network Group Ltd.,SHENZHEN,Real Estate,35659000.0,N/A,
@@ -4335,7 +4336,7 @@ NTRP,"NextTrip, Inc.",SANTE FE,Transportation Services,3715528.0,2026-02-28,http
 OTRKQ,"Ontrak, Inc.",MIAMI,"Services-Misc Health & Allied Services, NEC",3715000.0,2024-12-31,https://www.sec.gov/Archives/edgar/data/1136174/000162828025017681/otrk-20241231.htm
 TCGL,TechCreate Group Ltd.,GRAND CAYMAN KY1-1002,Services-Computer Processing & Data Preparation,3711693.0,N/A,
 XAIR,"Beyond Air, Inc.",GARDEN CITY,Surgical & Medical Instruments & Apparatus,3705000.0,2025-03-31,https://www.sec.gov/Archives/edgar/data/1641631/000164117225015750/form10-k.htm
-TRLED,Trillion Energy International Inc.,"ORAN, CANKAYA, ANKARA",Crude Petroleum & Natural Gas,3700727.0,2020-12-31,https://www.sec.gov/Archives/edgar/data/1648636/000149315221007581/form10-k.htm
+TRLEF,Trillion Energy International Inc.,"ORAN, CANKAYA, ANKARA",Crude Petroleum & Natural Gas,3700727.0,2020-12-31,https://www.sec.gov/Archives/edgar/data/1648636/000149315221007581/form10-k.htm
 HTBK,HERITAGE COMMERCE CORP,SAN JOSE,State Commercial Banks,3688000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1053352/000162828026016050/htbk-20251231.htm
 DJTWW,Trump Media & Technology Group Corp.,SARASOTA,"Services-Computer Programming, Data Processing, Etc.",3682600.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1849635/000114036126007174/ef20062365_10k.htm
 JDZG,JIADE Ltd,"CHENGDU CITY, SICHUAN PROVINCE",Services-Educational Services,3673691.0,N/A,
@@ -4430,7 +4431,7 @@ WORX,SCWorx Corp.,MIDDLETON,Services-Computer Processing & Data Preparation,2877
 STEK,Stemtech Corp,NAPLES,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",2876380.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1511820/000168316826004395/stemtech_i10k-123125.htm
 GCTS-WT,"GCT Semiconductor Holding, Inc.",SAN JOSE,Semiconductors & Related Devices,2866000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1851961/000119312526124183/gcts-20251231.htm
 UPB,"Upstream Bio, Inc.",WALTHAM,Pharmaceutical Preparations,2854000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2022626/000119312526126188/upb-20251231.htm
-INHD,INNO HOLDINGS INC.,BROOKSHIRE,Steel Pipe & Tubes,2846250.0,2025-09-30,https://www.sec.gov/Archives/edgar/data/1961847/000149315225027805/form10-k.htm
+INHD,INNO HOLDINGS INC.,BROOKSHIRE,"Retail-Retail Stores, NEC",2846250.0,2025-09-30,https://www.sec.gov/Archives/edgar/data/1961847/000149315225027805/form10-k.htm
 XNDU,Xanadu Quantum Technologies Ltd,TORONTO,Electronic Computers,2832000.0,N/A,
 SBEVW,"SPLASH BEVERAGE GROUP, INC.",FORT LAUDERDALE,Beverages,2827393.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1553788/000173112226000577/e7552_10-k.htm
 BWFG,"Bankwell Financial Group, Inc.",NEW CANAAN,State Commercial Banks,2826000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1505732/000150573226000046/bwfg-20251231.htm
@@ -4531,7 +4532,7 @@ SNTL,Sentinel Holdings Ltd.,SANTA CLARA,Services-Personal Services,1933422.0,202
 GXAI,GAXOS.AI INC.,ROSELAND,Services-Prepackaged Software,1933030.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1895618/000121390026029223/ea0281075-10k_gaxos.htm
 SXTC,"China SXT Pharmaceuticals, Inc.",TAIZHOU,Pharmaceutical Preparations,1928497.0,N/A,
 AASP,Agassi Sports Entertainment Corp.,LAS VEGAS,Retail-Miscellaneous Retail,1927715.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/930245/000147237526000109/ixform10k.htm
-AGGI,"Allied Energy, Inc.",TORONTO,Retail-Nonstore Retailers,1916320.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1109262/000168316826002986/allied_i10k-123125.htm
+AGGID,"Allied Energy, Inc.",TORONTO,Retail-Nonstore Retailers,1916320.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1109262/000168316826002986/allied_i10k-123125.htm
 AVR,Anteris Technologies Global Corp.,EAGAN,"Orthopedic, Prosthetic & Surgical Appliances & Supplies",1913000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2011514/000114036126006977/ef20060646_10k.htm
 XAGEW,"Longevity Health Holdings, Inc.",PITTSBURGH,"Soap, Detergents, Cleang Preparations, Perfumes, Cosmetics",1912811.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1842939/000119312526134698/xage-20251231.htm
 BIOE,Bio Essence Corp,IRVINE,Pharmaceutical Preparations,1897566.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1723059/000121390026035467/ea0283075-10k_bioessence.htm
@@ -4591,7 +4592,7 @@ TKOI,TELKONET INC,WAUKESHA,Auto Controls For Regulating Residential & Comml Envi
 FWFW,"FLYWHEEL ADVANCED TECHNOLOGY, INC.",CARSON CITY,Services-Miscellaneous Business Services,1448176.0,2025-09-30,https://www.sec.gov/Archives/edgar/data/1492617/000149315226001994/form10-k.htm
 DXR,DAXOR CORP,OAK RIDGE,,1446345.0,2011-12-31,https://www.sec.gov/Archives/edgar/data/27367/000101905612000401/daxor_10k11.htm
 LFST,"LifeStance Health Group, Inc.",SCOTTSDALE,Services-Health Services,1445000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1845257/000119312526071462/lfst-20251231.htm
-KPEA,Kun Peng International Ltd.,"GAOBEIDIAN TOWN,CHAOYANG DIST.",Services-Educational Services,1438127.0,2025-09-30,https://www.sec.gov/Archives/edgar/data/1502557/000149315225029689/form10-k.htm
+KPEAD,Kun Peng International Ltd.,"GAOBEIDIAN TOWN,CHAOYANG DIST.",Services-Educational Services,1438127.0,2025-09-30,https://www.sec.gov/Archives/edgar/data/1502557/000149315225029689/form10-k.htm
 BLTH,"AMERICAN BATTERY MATERIALS, INC.",GREENWICH,Mining & Quarrying of  Nonmetallic Minerals (No Fuels),1428045.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1487718/000149315226011615/form10-k.htm
 MCOMW,micromobility.com Inc.,NEW YORK,"Services-Business Services, NEC",1422000.0,2024-12-31,https://www.sec.gov/Archives/edgar/data/1788841/000107997325000651/mcom_10k.htm
 CYAB,"Trailblazer Holdings, Inc.",NEW YORK,Services-Prepackaged Software,1415000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2032341/000121390026034218/ea0282729-10k_trailblazer.htm
@@ -4872,6 +4873,7 @@ EBZT,"Everything Blockchain, Inc.",FLEMING ISLAND,Services-Prepackaged Software,
 CYDY,CytoDyn Inc.,VANCOUVER,Pharmaceutical Preparations,266000.0,2025-05-31,https://www.sec.gov/Archives/edgar/data/1175680/000155837025009617/cydy-20250531x10k.htm
 SNPW,Sun Pacific Holding Corp.,MANALAPAN,Services-Advertising,265573.0,2022-12-31,https://www.sec.gov/Archives/edgar/data/1343465/000149315223012644/form10-k.htm
 PALI,"PALISADE BIO, INC.",CARLSBAD,"Biological Products, (No Diagnostic Substances)",260000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1357459/000135745926000004/pali-20251231.htm
+NPHC,NUTRA PHARMA CORP,CORAL SPRINGS,Medicinal Chemicals & Botanical Products,257612.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1119643/000149315226024641/form10-k.htm
 SVRA,Savara Inc,AUSTIN,Pharmaceutical Preparations,257000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1160308/000119312526105076/svra-20251231.htm
 FCUV,FOCUS UNIVERSAL INC.,ONTARIO,"Industrial Instruments For Measurement, Display, and Control",255023.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1590418/000168316826002503/focus_i10k-123125.htm
 LADX,LadRx Corp,LOS ANGELES,"Biological Products, (No Diagnostic Substances)",250000.0,2024-12-31,https://www.sec.gov/Archives/edgar/data/799698/000164117225001038/form10-k.htm
@@ -4931,7 +4933,7 @@ FMBM,F&M BANK CORP,TIMBERVILLE,State Commercial Banks,162000.0,2025-12-31,https:
 VHC,VirnetX Holding Corp,ZEPHYR COVE,Patent Owners & Lessors,162000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1082324/000114036126010895/ef20060835_10k.htm
 SNTG,Sentage Holdings Inc.,SHANGHAI,Finance Services,161372.0,N/A,
 TDTH,Trident Digital Tech Holdings Ltd,SINGAPORE,"Services-Business Services, NEC",160925.0,N/A,
-ZIVOW,"Zivo Bioscience, Inc.",BLOOMFIELD HILLS,"Biological Products, (No Diagnostic Substances)",157220.0,2024-12-31,https://www.sec.gov/Archives/edgar/data/1101026/000165495425002948/zivo_10k.htm
+ZIVO,"Zivo Bioscience, Inc.",BLOOMFIELD HILLS,"Biological Products, (No Diagnostic Substances)",157220.0,2024-12-31,https://www.sec.gov/Archives/edgar/data/1101026/000165495425002948/zivo_10k.htm
 AGLY,Atlantis Glory Inc.,HONG KONG,Services-Management Consulting Services,155996.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1673504/000149315226009051/form10-k.htm
 VRSSF,Verses AI Inc.,VANCOUVER,"Services-Computer Programming, Data Processing, Etc.",155000.0,2025-03-31,https://www.sec.gov/Archives/edgar/data/1879001/000164117225019545/form10-k.htm
 PTOS,"P2 Solar, Inc.",SURREY,Construction - Special Trade Contractors,153055.0,2025-03-31,https://www.sec.gov/Archives/edgar/data/1172069/000164033425001215/ptos_10k.htm
@@ -5171,6 +5173,7 @@ QPRC,QUEST PATENT RESEARCH CORP,RYE,Wholesale-Miscellaneous Nondurable Goods,142
 HNIT,Huineng Technology Corp,KUALA LUMPUR,Services-Computer Processing & Data Preparation,14200.0,2025-11-30,https://www.sec.gov/Archives/edgar/data/1994373/000149315226008238/form10-k.htm
 GLCP,GLOBAL LEADERS CORP,WANCHAI,Services-Management Consulting Services,14061.0,2024-10-31,https://www.sec.gov/Archives/edgar/data/1830696/000149315225003478/form10-k.htm
 STI,Solidion Technology Inc.,DALLAS,"Miscellaneous Electrical Machinery, Equipment & Supplies",13350.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1881551/000121390026044126/ea0276988-10k_solidion.htm
+RADC,Readvantage Corp.,HOUSTON,Services-Computer Processing & Data Preparation,12966.0,2025-06-30,https://www.sec.gov/Archives/edgar/data/2057381/000205738125000022/reavantag10k2025up.htm
 GCAN,"Greater Cannabis Company, Inc.",BALTIMORE,Pharmaceutical Preparations,12630.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1695473/000149315226014210/form10-k.htm
 YBGJ,Yubo International Biotech Ltd,BEIJING,Electromedical & Electrotherapeutic Apparatus,12353.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/895464/000164033426000598/yubo_10k.htm
 IXHL,Incannex Healthcare Inc.,NORWEST NSW,Pharmaceutical Preparations,12000.0,2025-06-30,https://www.sec.gov/Archives/edgar/data/1873875/000121390025092837/ea0258594-10k_incannex.htm
@@ -5178,6 +5181,7 @@ BCDA,"BioCardia, Inc.",SUNNYVALE,"Biological Products, (No Diagnostic Substances
 CTGL,"CITRINE GLOBAL, CORP.",TEL AVIV,Services-Prepackaged Software,12000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1498067/000149315226016841/form10-k.htm
 GGBY,Alpha Investment Inc.,MIAMI BEACH,Real Estate,12000.0,2023-12-31,https://www.sec.gov/Archives/edgar/data/1616736/000151597124000038/alpc10k123123.htm
 BDPT,"BIOADAPTIVES, INC.",LAS VEGAS,Pharmaceutical Preparations,11944.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1575142/000164033426000718/bdpt_10k.htm
+RDSC,Radiant Strategies Corp,KUALA LUMPUR,Services-Management Consulting Services,11279.0,N/A,
 TMGI,"Marquie Group, Inc.",ST. PETERSBURGH,Radio Broadcasting Stations,11040.0,2025-05-31,https://www.sec.gov/Archives/edgar/data/1434601/000168316825006872/marquie_i10k-053125.htm
 IMAA,IMA Tech,SHANGHAI,Services-Prepackaged Software,10800.0,2025-04-30,https://www.sec.gov/Archives/edgar/data/1980295/000198029525000008/report10k_ima2025.htm
 RAINW,"Rain Enhancement Technologies Holdco, Inc.",NAPLES,Misc Industrial & Commercial Machinery & Equipment,10500.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2028293/000121390026044121/ea0282265-10k_rainenhan.htm
@@ -5428,7 +5432,7 @@ YMM,Full Truck Alliance Co. Ltd.,NANJING,Services-Prepackaged Software,0.0,N/A,
 BPYPO,Brookfield Property Partners L.P.,HAMILTON,Real Estate,0.0,N/A,
 SSB,SouthState Bank Corp,WINTER HAVEN,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/764038/000110465926017884/ssb-20251231x10k.htm
 ARE,"ALEXANDRIA REAL ESTATE EQUITIES, INC.",PASADENA,Real Estate Investment Trusts,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1035443/000103544326000013/are-20251231.htm
-FNMAS,FEDERAL NATIONAL MORTGAGE ASSOCIATION FANNIE MAE,WASHINGTON,Federal & Federally-Sponsored Credit Agencies,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/310522/000031052226000015/fnm-20251231.htm
+FNMAH,FEDERAL NATIONAL MORTGAGE ASSOCIATION FANNIE MAE,WASHINGTON,Federal & Federally-Sponsored Credit Agencies,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/310522/000031052226000015/fnm-20251231.htm
 KLAR,Klarna Group plc,LONDON,Finance Services,0.0,N/A,
 UMBFO,UMB FINANCIAL CORP,KANSAS CITY,National Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/101382/000119312526076496/umbf-20251231.htm
 SPIWF,SPIE SA/ADR,ILE-DE-FRANCE,,0.0,N/A,
@@ -5511,7 +5515,7 @@ OZKAP,Bank OZK,LITTLE ROCK,,0.0,N/A,
 PPENF,Pampa Energy Inc.,CITY OF BUENOS AIRES,Electric Services,0.0,N/A,
 XJNGF,"Xinjiang Goldwind Science & Technology Co., Ltd./ADR",BEIJING,,0.0,N/A,
 NWSZF,CTF Services Ltd,KOWLOON,,0.0,N/A,
-FMCKK,FEDERAL HOME LOAN MORTGAGE CORP,MCLEAN,Federal & Federally-Sponsored Credit Agencies,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1026214/000102621426000021/fmcc-20251231.htm
+FMCKI,FEDERAL HOME LOAN MORTGAGE CORP,MCLEAN,Federal & Federally-Sponsored Credit Agencies,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1026214/000102621426000021/fmcc-20251231.htm
 SGHC,Super Group (SGHC) Ltd,ST. PETER PORT,Services-Miscellaneous Amusement & Recreation,0.0,N/A,
 APGE,"Apogee Therapeutics, Inc.",WALTHAM,"Biological Products, (No Diagnostic Substances)",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1974640/000197464026000002/apge-20251231.htm
 PTXAF,PT XLSMART Telecom Sejahtera Tbk/ADR,NEW YORK,American Depositary Receipts,0.0,N/A,
@@ -5688,7 +5692,7 @@ RQI,COHEN & STEERS QUALITY INCOME REALTY FUND INC,NEW YORK,,0.0,N/A,
 LOMA,Loma Negra Compania Industrial Argentina Sociedad Anonima,BUENOS AIRES,"Cement, Hydraulic",0.0,N/A,
 SRCE,1ST SOURCE CORP,SOUTH BEND,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/34782/000003478226000011/source-20251231.htm
 ASM,AVINO SILVER & GOLD MINES LTD,VANCOUVER BC CANADA,Metal Mining,0.0,N/A,
-MBINL,Merchants Bancorp,CARMEL,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1629019/000110465926021549/mbin-20251231x10k.htm
+MBINN,Merchants Bancorp,CARMEL,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1629019/000110465926021549/mbin-20251231x10k.htm
 MBX,"MBX Biosciences, Inc.",CARMEL,Pharmaceutical Preparations,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1776111/000119312526103121/mbx-20251231.htm
 EDN,EDENOR,CITY OF BUENOS AIRES,Electric Services,0.0,N/A,
 STBA,S&T BANCORP INC,INDIANA,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/719220/000071922026000030/stba-20251231.htm
@@ -5715,7 +5719,7 @@ CET,CENTRAL SECURITIES CORP,NEW YORK,,0.0,N/A,
 KOD,Kodiak Sciences Inc.,PALO ALTO,"Biological Products, (No Diagnostic Substances)",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1468748/000119312526134887/kod-20251231.htm
 VET,VERMILION ENERGY INC.,CALGARY,Crude Petroleum & Natural Gas,0.0,N/A,
 BTT,BlackRock Municipal 2030 Target Term Trust,WILMINGTON,,0.0,N/A,
-EFC-PC,Ellington Financial Inc.,Greenwich,Real Estate,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1411342/000162828026013279/efc-20251231.htm
+EFC-PD,Ellington Financial Inc.,Greenwich,Real Estate,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1411342/000162828026013279/efc-20251231.htm
 SCZM,Santacruz Silver Mining Ltd.,NUEVO LEON,Gold and Silver Ores,0.0,N/A,
 BY,"BYLINE BANCORP, INC.",CHICAGO,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1702750/000119312526083194/by-20251231.htm
 HYT,"BLACKROCK CORPORATE HIGH YIELD FUND, INC.",WILMINGTON,,0.0,N/A,
@@ -5792,7 +5796,7 @@ MFICL,MidCap Financial Investment Corp,NEW YORK,,0.0,2025-12-31,https://www.sec.
 PFBC,Preferred Bank,LOS ANGELES,,0.0,N/A,
 OSBC,OLD SECOND BANCORP INC,AURORA,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/357173/000110465926020393/osbc-20251231x10k.htm
 PDS,PRECISION DRILLING Corp,CALGARY,Drilling Oil & Gas Wells,0.0,N/A,
-MFAO,"MFA FINANCIAL, INC.",NEW YORK,Real Estate Investment Trusts,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1055160/000105516026000004/mfa-20251231.htm
+MFA-PC,"MFA FINANCIAL, INC.",NEW YORK,Real Estate Investment Trusts,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1055160/000105516026000004/mfa-20251231.htm
 MUC,"BLACKROCK MUNIHOLDINGS CALIFORNIA QUALITY FUND, INC.",WILMINGTON,,0.0,N/A,
 FMBH,"FIRST MID BANCSHARES, INC.",MATTOON,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/700565/000119312526080847/fmbh-20251231.htm
 SBR,SABINE ROYALTY TRUST,DALLAS,Oil Royalty Traders,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/710752/000119312526081251/sbr_10-k_2025-12-31.htm
@@ -5871,7 +5875,7 @@ MCBS,"MetroCity Bankshares, Inc.",DORAVILLE,State Commercial Banks,0.0,2025-12-3
 AIO,Virtus Artificial Intelligence & Technology Opportunities Fund,GREENFIELD,,0.0,N/A,
 VEL,"Velocity Financial, Inc.",WESTLAKE VILLAGE,Finance Services,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1692376/000119312526102677/vel-20251231.htm
 TRST,TRUSTCO BANK CORP N Y,ALBANY,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/357301/000114036126009576/ef20039040_10k.htm
-RWTN,REDWOOD TRUST INC,MILL VALLEY,Real Estate Investment Trusts,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/930236/000093023626000007/rwt-20251231.htm
+RWTS,REDWOOD TRUST INC,MILL VALLEY,Real Estate Investment Trusts,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/930236/000093023626000007/rwt-20251231.htm
 DFSLY,Dowway Holdings Limited/ADR,NEW YORK,,0.0,N/A,
 UURAF,Ucore Rare Metals Inc.,BEDFORD,,0.0,N/A,
 ADAML,"ADAMAS TRUST, INC.",NEW YORK,Real Estate Investment Trusts,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1273685/000127368526000029/adam-20251231.htm
@@ -6070,7 +6074,7 @@ MBVIU,M3-Brigade Acquisition VI Corp.,NEW YORK,Blank Checks,0.0,2025-12-31,https
 DFP,Flaherty & Crumrine Dynamic Preferred & Income Fund Inc,None,,0.0,N/A,
 GLDG,GoldMining Inc.,VANCOUVER,Gold and Silver Ores,0.0,N/A,
 HPI,JOHN HANCOCK PREFERRED INCOME FUND,BOSTON,,0.0,N/A,
-HCICR,Hennessy Capital Investment Corp. VIII,ZEPHYR COVE,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2099093/000149315226013683/form10-k.htm
+HCICU,Hennessy Capital Investment Corp. VIII,ZEPHYR COVE,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2099093/000149315226013683/form10-k.htm
 BMRC,Bank of Marin Bancorp,NOVATO,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1403475/000140347526000018/bmrc-20251231.htm
 OILSF,Saturn Oil & Gas Inc.,CALGARY,,0.0,N/A,
 GGAZF,Goldgroup Mining Inc.,VANCOUVER,,0.0,N/A,
@@ -6100,7 +6104,7 @@ BRBI,BRBI BR Partners S.A.,SAO PAULO,Finance Services,0.0,N/A,
 LEO,"BNY MELLON STRATEGIC MUNICIPALS, INC.",NEW YORK,,0.0,N/A,
 EAD,ALLSPRING INCOME OPPORTUNITIES FUND,CHARLOTTE,,0.0,N/A,
 WRLRF,West Red Lake Gold Mines Ltd.,VANCOUVER,,0.0,N/A,
-XRPNW,Armada Acquisition Corp. II,"CARMANA BAY, GRAND CAYMAN",Blank Checks,0.0,2025-09-30,https://www.sec.gov/Archives/edgar/data/2044009/000119312525308177/d66244d10k.htm
+XRPNU,Armada Acquisition Corp. II,"CARMANA BAY, GRAND CAYMAN",Blank Checks,0.0,2025-09-30,https://www.sec.gov/Archives/edgar/data/2044009/000119312525308177/d66244d10k.htm
 PDLB,"Ponce Financial Group, Inc.",BRONX,"Savings Institution, Federally Chartered",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1874071/000119312526104610/pdlb-20251231.htm
 OBT,"Orange County Bancorp, Inc. /DE/",MIDDLETOWN,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1754226/000110465926028308/obt-20251231x10k.htm
 NPACU,New Providence Acquisition Corp. III/Cayman,PALM BEACH,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2048948/000121390026037680/ea0283443-10k_newpro3.htm
@@ -6130,7 +6134,7 @@ MBAVW,M3-Brigade Acquisition V Corp.,NEW YORK,Blank Checks,0.0,2025-12-31,https:
 TACOW,Berto Acquisition Corp.,LAS VEGAS,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2033122/000182912626002856/bertoacquisition_10k.htm
 PNNT,PENNANTPARK INVESTMENT CORP,NEW YORK,,0.0,2025-09-30,https://www.sec.gov/Archives/edgar/data/1383414/000119312525293703/pnnt-20250930.htm
 MYN,"BLACKROCK MUNIYIELD NEW YORK QUALITY FUND, INC.",WILMINGTON,,0.0,N/A,
-WENNW,WEN Acquisition Corp,OAKLAND,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2057043/000121390026034867/ea0283367-10k_wenacquisi.htm
+WENNU,WEN Acquisition Corp,OAKLAND,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2057043/000121390026034867/ea0283367-10k_wenacquisi.htm
 DBO,Invesco DB Oil Fund,DOWNERS GROVE,Commodity Contracts Brokers & Dealers,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1383058/000119312526083549/dbo-20251231.htm
 TECX,"Tectonic Therapeutic, Inc.",WATERTOWN,"Biological Products, (No Diagnostic Substances)",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1681087/000119312526076793/tecx-20251231.htm
 RC-PE,Ready Capital Corp,NEW YORK,Real Estate Investment Trusts,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1527590/000162828026013256/rc-20251231.htm
@@ -6167,7 +6171,7 @@ SCD,LMP CAPITAL & INCOME FUND INC.,NEW YORK,,0.0,N/A,
 ILPT,Industrial Logistics Properties Trust,NEWTON,Real Estate Investment Trusts,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1717307/000171730726000012/ilpt-20251231.htm
 TACHU,Titan Acquisition Corp.,HOUSTON,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2009183/000182912626002929/titanacq_10k.htm
 OTLY,Oatly Group AB,MALMO,Food and Kindred Products,0.0,N/A,
-CGCTU,Cartesian Growth Corp III,NEW YORK,"Miscellaneous Electrical Machinery, Equipment & Supplies",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2049662/000110465926032882/tmb-20251231x10k.htm
+FACWW,Cartesian Growth Corp III,NEW YORK,"Miscellaneous Electrical Machinery, Equipment & Supplies",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2049662/000110465926032882/tmb-20251231x10k.htm
 HIO,WESTERN ASSET HIGH INCOME OPPORTUNITY FUND INC.,NEW YORK,,0.0,N/A,
 MIY,"BLACKROCK MUNIYIELD MICHIGAN QUALITY FUND, INC.",WILMINGTON,,0.0,N/A,
 KTF,DWS MUNICIPAL INCOME TRUST,NEW YORK,,0.0,N/A,
@@ -6221,7 +6225,7 @@ CEPV,"Cantor Equity Partners V, Inc.",NEW YORK,Blank Checks,0.0,2025-12-31,https
 SIMAW,SIM Acquisition Corp. I,MIAMI,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2014982/000121390026035724/ea0283129-10k_simacq1.htm
 AEF,"abrdn Emerging Markets ex-China Fund, Inc.",PHILADELPHIA,,0.0,N/A,
 RZLT,"Rezolute, Inc.",REDWOOD CITY,Pharmaceutical Preparations,0.0,2025-06-30,https://www.sec.gov/Archives/edgar/data/1509261/000110465925090848/rzlt-20250630x10k.htm
-MLACU,Mountain Lake Acquisition Corp.,INCLINE VILLAGE,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2029492/000121390026018866/ea0277324-10k_mountain.htm
+MLACR,Mountain Lake Acquisition Corp.,INCLINE VILLAGE,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2029492/000121390026018866/ea0277324-10k_mountain.htm
 SPXX,Nuveen S&P 500 Dynamic Overwrite Fund,CHICAGO,,0.0,N/A,
 DRDBW,Roman DBDR Acquisition Corp. II,BOCA RATON,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2032528/000110465926023575/drdb-20251231x10k.htm
 FERAU,Fifth Era Acquisition Corp I,TIBURON,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2025401/000121390026037410/ea0283788-10k_fifthera1.htm
@@ -6237,7 +6241,7 @@ AARD,"Aardvark Therapeutics, Inc.",SAN DIEGO,Pharmaceutical Preparations,0.0,202
 CAF,"Morgan Stanley China A Share Fund, Inc.",NEW YORK,,0.0,N/A,
 ATIIW,Archimedes Tech SPAC Partners II Co.,CLAYMONT,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2028516/000143774926006780/atii20251231_10k.htm
 KOYNU,"CSLM Digital Asset Acquisition Corp III, Ltd",GRAND CAYMAN,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2068454/000182912626002517/cslmacq3_10k.htm
-VACI-WT,Viking Acquisition Corp I,NEW YORK,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2080023/000121390026030022/ea0281567-10k_viking1.htm
+VACI-UN,Viking Acquisition Corp I,NEW YORK,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2080023/000121390026030022/ea0281567-10k_viking1.htm
 ALDFU,Aldel Financial II Inc.,ITASCA,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2031561/000110465926033988/aldf-20251231x10k.htm
 LRMR,"Larimar Therapeutics, Inc.",BALA CYNWYD,Pharmaceutical Preparations,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1374690/000119312526115878/lrmr-20251231.htm
 TXEMF,TEMPLETON EMERGING MARKETS INCOME FUND,FORT LAUDERDALE,,0.0,N/A,
@@ -6324,7 +6328,7 @@ TMTSW,Spartacus Acquisition Corp. II,AUSTIN,Blank Checks,0.0,2025-12-31,https://
 BLFY,Blue Foundry Bancorp,RUTHERFORD,"Savings Institutions, Not Federally Chartered",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1846017/000162828026022338/blue-20251231.htm
 SAC-WT,Safeguard Acquisition Corp.,LAS VEGAS,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2082844/000121390026023746/ea0277185-10k_safeguard.htm
 AGXPF,SILVER X MINING CORP.,VANCOUVER,,0.0,N/A,
-SBXD-WT,SilverBox Corp IV,AUSTIN,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2015947/000110465926032193/sbxc-20251231x10k.htm
+SBXD-UN,SilverBox Corp IV,AUSTIN,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2015947/000110465926032193/sbxc-20251231x10k.htm
 OVLY,Oak Valley Bancorp,OAKDALE,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1431567/000143774926009757/ovly20251231_10k.htm
 HVIIR,Hennessy Capital Investment Corp. VII,ZEPHYR COVE,Electric Services,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1846416/000149315226009187/form10-k.htm
 FCCO,FIRST COMMUNITY CORP /SC/,LEXINGTON,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/932781/000155278126000126/e26095_fcco-10k.htm
@@ -6527,10 +6531,10 @@ CMTV,COMMUNITY BANCORP /VT,DERBY,National Commercial Banks,0.0,2025-12-31,https:
 CIK,"CREDIT SUISSE ASSET MANAGEMENT INCOME FUND, INC.",NEW YORK,,0.0,N/A,
 FPRGF,Falco Resources Ltd.,VANCOUVER,,0.0,N/A,
 NCAUF,Newcore Gold Ltd.,VANCOUVER,,0.0,N/A,
-SPEGR,Silver Pegasus Acquisition Corp.,SANTA CLARA,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2028735/000121390026033252/ea0275387-10k_silver.htm
+SPEGU,Silver Pegasus Acquisition Corp.,SANTA CLARA,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2028735/000121390026033252/ea0275387-10k_silver.htm
 FOTB,"FIRST OTTAWA BANCSHARES, INC.",OTTAWA,State Commercial Banks,0.0,2011-12-31,https://www.sec.gov/Archives/edgar/data/1099668/000138713112000833/fotb-10k_123111.htm
 MSD,MORGAN STANLEY EMERGING MARKETS DEBT FUND INC,NEW YORK,,0.0,N/A,
-OXSQG,Oxford Square Capital Corp.,GREENWICH,,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1259429/000121390026024280/ea0276931_10k.htm
+OXSQH,Oxford Square Capital Corp.,GREENWICH,,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1259429/000121390026024280/ea0276931_10k.htm
 PCSC,Perceptive Capital Solutions Corp,NEW YORK,Services-Medical Laboratories,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2017526/000114036126009262/ef20060645_10k.htm
 EDF,Virtus Stone Harbor Emerging Markets Income Fund,GREENFIELD,,0.0,N/A,
 NEXM,NexMetals Mining Corp.,TORONTO,Metal Mining,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/795800/000149315226010089/form10-k.htm
@@ -6574,7 +6578,7 @@ RMBI,"Richmond Mutual Bancorporation, Inc.",RICHMOND,State Commercial Banks,0.0,
 BSEM,BIOSTEM TECHNOLOGIES,POMPANO BEACH,"Biological Products, (No Diagnostic Substances)",0.0,N/A,
 JHS,JOHN HANCOCK INCOME SECURITIES TRUST,BOSTON,,0.0,N/A,
 GNT-PA,"GAMCO Natural Resources, Gold & Income Trust",RYE,,0.0,N/A,
-OCCIM,"OFS Credit Company, Inc.",CHICAGO,,0.0,N/A,
+OCCIN,"OFS Credit Company, Inc.",CHICAGO,,0.0,N/A,
 RBKB,"Rhinebeck Bancorp, Inc.",POUGHKEEPSIE,"Savings Institutions, Not Federally Chartered",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1751783/000175178326000005/rbkb-20251231x10k.htm
 SRBK,"SR Bancorp, Inc.",BOUND BROOK,"Savings Institutions, Not Federally Chartered",0.0,2025-06-30,https://www.sec.gov/Archives/edgar/data/1951276/000119312525223165/srbk-20250630.htm
 HYDTF,Hydreight Technologies Inc.,VANCOUVER,,0.0,N/A,
@@ -6673,7 +6677,7 @@ LVPA,LVPAI GROUP Ltd,NEW YORK,"Investors, NEC",0.0,2026-01-31,https://www.sec.go
 HOVRW,New Horizon Aircraft Ltd.,LINDSAY,Aircraft,0.0,2025-05-31,https://www.sec.gov/Archives/edgar/data/1930021/000121390025079570/ea0245807-10k_newhorizon.htm
 WAMFF,Alaska Silver Corp.,TUCSON,Gold and Silver Ores,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1893899/000110465926037627/wamff-20251231x10k.htm
 CRDL,Cardiol Therapeutics Inc.,OAKVILLE,"Biological Products, (No Diagnostic Substances)",0.0,N/A,
-GECCO,Great Elm Capital Corp.,PALM BEACH GARDENS,,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1675033/000119312526085697/gecc-20251231.htm
+GECCI,Great Elm Capital Corp.,PALM BEACH GARDENS,,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1675033/000119312526085697/gecc-20251231.htm
 NOEMR,CO2 Energy Transition Corp.,HOUSTON,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1956648/000121390026027784/ea0279184-10k_co2energy.htm
 CCID,Carlyle Credit Income Fund,NEW YORK,,0.0,N/A,
 IGI,Western Asset Investment Grade Opportunity Trust Inc.,NEW YORK,,0.0,N/A,
@@ -6697,7 +6701,7 @@ PFBX,PEOPLES FINANCIAL CORP /MS/,BILOXI,State Commercial Banks,0.0,2025-12-31,ht
 ISTKF,Intellistake Technologies Corp.,VANCOUVER,,0.0,N/A,
 NWPP,NEW PEOPLES BANKSHARES INC,HONAKER,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1163389/000190359626000116/nwpp_10k.htm
 PDPA,Pearl Diver Credit Co Inc.,NEW YORK,,0.0,N/A,
-VMCWF,Valuence Merger Corp. I,ORINDA,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1892747/000149315226014211/form10-k.htm
+VMCUF,Valuence Merger Corp. I,ORINDA,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1892747/000149315226014211/form10-k.htm
 RMI,"RiverNorth Opportunistic Municipal Income Fund, Inc.",WEST PALM BEACH,,0.0,N/A,
 TENX,"TENAX THERAPEUTICS, INC.",CHAPEL HILL,Pharmaceutical Preparations,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/34956/000119312526099393/tennx-20251231.htm
 RGT,"ROYCE GLOBAL TRUST, INC.",NEW YORK,,0.0,N/A,
@@ -6711,7 +6715,7 @@ NZAUF,Rua Gold Inc.,VANCOUVER,,0.0,N/A,
 VGI,Virtus Global Multi-Sector Income Fund,GREENFIELD,,0.0,N/A,
 IAE,Voya Asia Pacific High Dividend Equity Income Fund,SCOTTSDALE,,0.0,N/A,
 GCV,GABELLI CONVERTIBLE & INCOME SECURITIES FUND INC,RYE,,0.0,N/A,
-ORIQU,Origin Investment Corp I,AMBER RESIDENCES,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2044523/000149315226013616/form10-k.htm
+ORIQW,Origin Investment Corp I,AMBER RESIDENCES,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2044523/000149315226013616/form10-k.htm
 PBHC,"Pathfinder Bancorp, Inc.",OSWEGO,State Commercial Banks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1609065/000119312526132075/pbhc-20251231.htm
 CFSU,Complete Financial Solutions Inc.,LAS VEGAS,,0.0,N/A,
 MMTXW,Miluna Acquisition Corp,NEW YORK,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2077033/000149315226006447/form10-k.htm
@@ -6797,7 +6801,7 @@ LGCXF,Lahontan Gold Corp.,VANCOUVER,,0.0,N/A,
 RSF,"RiverNorth Capital & Income Fund, Inc.",WEST PALM BEACH,,0.0,N/A,
 PMVP,"PMV Pharmaceuticals, Inc.",PRINCETON,Pharmaceutical Preparations,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1699382/000119312526095014/pmvp-20251231.htm
 CLST,"Catalyst Bancorp, Inc.",OPELOUSAS,"Savings Institution, Federally Chartered",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1849867/000110465926037676/clst-20251231x10k.htm
-PRNAF,ALTERITY THERAPEUTICS LTD,MELBOURNE,Pharmaceutical Preparations,0.0,N/A,
+PRNAD,ALTERITY THERAPEUTICS LTD,MELBOURNE,Pharmaceutical Preparations,0.0,N/A,
 DRYGF,Dryden Gold Corp.,VANCOUVER,,0.0,N/A,
 NKGFD,Nevada King Gold Corp.,VANCOUVER,,0.0,N/A,
 RVI,Robinhood Ventures Fund I,MENLO PARK,,0.0,N/A,
@@ -7119,7 +7123,7 @@ PAXH,PREAXIA HEALTH CARE PAYMENT SYSTEMS INC.,DUNEDIN,"Retail-Home Furniture, Fu
 APMCF,MORIEN RESOURCES CORP.,DARTMOUTH,,0.0,N/A,
 HKPD,"Cellyan Biotechnology Co., Ltd",KOWLOON,"Wholesale-Drugs, Proprietaries & Druggists' Sundries",0.0,N/A,
 TRRFF,TRIFECTA GOLD LTD,VANCOUVER,,0.0,N/A,
-GPUSD,Alset Capital Inc.,VANCOUVER,,0.0,N/A,
+GPUSF,Alset Capital Inc.,VANCOUVER,,0.0,N/A,
 BIVIW,BIOVIE INC.,CARSON CITY,Pharmaceutical Preparations,0.0,2025-06-30,https://www.sec.gov/Archives/edgar/data/1580149/000152013825000268/bivi-20250630_10k.htm
 GPMTF,GPM Metals Inc.,TORONTO,,0.0,N/A,
 MTR,MESA ROYALTY TRUST/TX,HOUSTON,Oil Royalty Traders,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/313364/000110465926036896/tm261213-1_10k.htm
@@ -7251,7 +7255,7 @@ ATMH,"ALL THINGS MOBILE ANALYTIC, INC.",NEW YORK,"Services-Business Services, NE
 BABYF,Else Nutrition Holdings Inc.,SURREY,,0.0,N/A,
 GRI,"GRI Bio, Inc.",LA JOLLA,Pharmaceutical Preparations,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1824293/000182429326000033/ck0001824293-20251231.htm
 GP,GREENPOWER MOTOR Co INC.,VANCOUVER,Truck & Bus Bodies,0.0,N/A,
-AEMD,AETHLON MEDICAL INC,SAN DIEGO,Surgical & Medical Instruments & Apparatus,0.0,2025-03-31,https://www.sec.gov/Archives/edgar/data/882291/000168316825004780/aethlon_i10k-033125.htm
+AEMD,AETHLON MEDICAL INC,SAN DIEGO,Surgical & Medical Instruments & Apparatus,0.0,2026-03-31,https://www.sec.gov/Archives/edgar/data/882291/000168316826004710/aethlon_i10k-033126.htm
 OVTZ,OCULUS INC.,VANCOUVER,"Services-Business Services, NEC",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1107280/000143774926009176/ovtz20251231_10k.htm
 VPER,VIPER NETWORKS INC,TROY,"Services-Business Services, NEC",0.0,N/A,
 VRRCF,VR Resources Ltd.,VANCOUVER,,0.0,N/A,
@@ -7284,7 +7288,7 @@ OVATF,OVATION SCIENCE INC.,VANCOUVER,,0.0,N/A,
 CEROW,"CERO THERAPEUTICS HOLDINGS, INC.",SOUTH SAN FRANCISCO,"Biological Products, (No Diagnostic Substances)",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1870404/000121390026044040/ea0285271-10k_cero.htm
 LITSF,LITHOS GROUP LTD.,VANCOUVER,,0.0,N/A,
 PTIX,"Protagenic Therapeutics, Inc.\new",NEW YORK,Pharmaceutical Preparations,0.0,2024-12-31,https://www.sec.gov/Archives/edgar/data/1022899/000164117225001600/form10-k.htm
-IPTND,IMPACT ANALYTICS INC.,LINTHICUM HEIGHTS,,0.0,N/A,
+IPTNF,IMPACT ANALYTICS INC.,LINTHICUM HEIGHTS,,0.0,N/A,
 NULGF,NuLegacy Gold Corp,VANCOUVER,,0.0,N/A,
 NGCG,"New Generation Consumer Group, Inc.",WILMINGTON,Services-Computer Programming Services,0.0,N/A,
 MDCE,Medical Care Technologies Inc.,MESA,"Services-Business Services, NEC",0.0,2011-12-31,https://www.sec.gov/Archives/edgar/data/1404593/000121390012001816/f10k2011_medicalcare.htm
@@ -7431,7 +7435,7 @@ CSCCF,Capstone Copper Corp./ADR,NEW YORK,,0.0,N/A,
 DUTBF,Duality Biotherapeutics Inc/ADR,SHANGHAI,,0.0,N/A,
 YIFE,Yi Feng Holdings Ltd.,HONG KONG,General Bldg Contractors - Nonresidential Bldgs,0.0,N/A,
 LFACW,Leapfrog Acquisition Corp,SUMMIT,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2084563/000118518526001001/lfacu10k123125.htm
-PAACW,Proem Acquisition Corp. I,DALLAS,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2087446/000121390026034861/ea0281107-10k_proem1.htm
+PAACU,Proem Acquisition Corp. I,DALLAS,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2087446/000121390026034861/ea0281107-10k_proem1.htm
 SVNHF,SUNEVISION HOLDINGS/ADR,NEW YORK,,0.0,N/A,
 LKYRF,Locksley Resources Limited/ADR,NEW YORK,,0.0,N/A,
 BXRLY,Boxer Retail Limited/ADR,KWAZULU-NATAL,,0.0,N/A,
@@ -7538,7 +7542,7 @@ MBGCF,"Mitsubishi Gas Chemical Company, Inc./ADR",TOKYO,,0.0,N/A,
 BWGC,BW Industrial Holdings Inc.,HOUSTON,General Bldg Contractors - Nonresidential Bldgs,0.0,N/A,
 LBIO,Longevity Biomedical Holdings Corp.,NEW ROCHELLE,,0.0,N/A,
 ALOG,ALBERT ORIGIN ACQUISITION Corp,GRAND CAYMAN,Blank Checks,0.0,N/A,
-QADRU,QDRO Acquisition Corp.,NEW YORK,Blank Checks,0.0,N/A,
+QADRW,QDRO Acquisition Corp.,NEW YORK,Blank Checks,0.0,N/A,
 UATCY,"Unisound AI Technology Co., Ltd./ADR",BEIJING,,0.0,N/A,
 AMVIF,AUMOVIO SE,FRANKFURT AM MAIN,,0.0,N/A,
 JSKJ,"Jiansu (Shanghai) Information Technology Co., Ltd",MIAMI,,0.0,N/A,
@@ -7658,7 +7662,7 @@ MFHK,MIBEE AVIATION TECHNOLOGY HOLDING INC,DONGGUAN,,0.0,N/A,
 ADBT,"Advasa Holdings, Inc.",MINATO-KU,Services-Prepackaged Software,0.0,N/A,
 AFNX,AfterNext Acquisition I Corp.,SINGAPORE,Blank Checks,0.0,N/A,
 SBKLF,Sumitomo Bakelite Co Limited/ADR,TOKYO,,0.0,N/A,
-XFLH-RI,XFLH Capital Corp,DOVER,Blank Checks,0.0,N/A,
+XFLH-UN,XFLH Capital Corp,DOVER,Blank Checks,0.0,N/A,
 HQWWW,Horizon Quantum Holdings Pte. Ltd.,SINGAPORE,Services-Computer Programming Services,0.0,N/A,
 XSLLW,Xsolla SPAC 1,SHERMAN OAKS,Blank Checks,0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/2088807/000121390026037649/ea0279324-10k_xsolla1.htm
 MTMCF,Metallium Limited/ADR,NEW YORK,,0.0,N/A,
@@ -7947,7 +7951,7 @@ XAKJ,"SIPP International Industries, Inc.",LAS VEGAS,Radio & Tv Broadcasting & C
 ACRL,"Atacama Resources International, Inc.",ORLANDO,Metal Mining,0.0,2016-12-31,https://www.sec.gov/Archives/edgar/data/1584618/000101489717000084/atacama10k16v3.htm
 TGCB,"Tego Cyber, Inc.",LAS VEGAS,"Services-Computer Programming, Data Processing, Etc.",0.0,2023-06-30,https://www.sec.gov/Archives/edgar/data/1815632/000165495424000687/tgcb_10k.htm
 EGTYF,Eguana Technologies Inc.,None,,0.0,N/A,
-NUVID,Emo Capital Corp.,LAS VEGAS,Agricultural Chemicals,0.0,2015-07-31,https://www.sec.gov/Archives/edgar/data/1410708/000137216715000158/emo10kjul2015.htm
+NUVI,Emo Capital Corp.,LAS VEGAS,Agricultural Chemicals,0.0,2015-07-31,https://www.sec.gov/Archives/edgar/data/1410708/000137216715000158/emo10kjul2015.htm
 SRMX,"SADDLE RANCH MEDIA, INC.",IRVINE,Electric Lighting & Wiring Equipment,0.0,N/A,
 WNFTD,Worldwide NFT Inc.,HENDERSON,Services-Computer Processing & Data Preparation,0.0,2023-06-30,https://www.sec.gov/Archives/edgar/data/1528188/000149315223034901/form10-k.htm
 KNOS,KRONOS ADVANCED TECHNOLOGIES INC,PARKERSBURG,Industrial & Commercial Fans & Blowers & Air Purifing Equip,0.0,2000-08-30,https://www.sec.gov/Archives/edgar/data/1108248/000094420900001633/0001.txt
@@ -8083,7 +8087,7 @@ BLNH,"Blue Line Holdings, Inc.",CASTLE PINES,Bottled & Canned Soft Drinks & Carb
 MTAL-WT,Metals Acquisition Corp. II,GRAND CAYMAN,Blank Checks,0.0,N/A,
 CLBR-WT,Colombier Acquisition Corp. III,PALM BEACH,Blank Checks,0.0,N/A,
 HUSIF,NICOLA MINING INC.,VANCOUVER,Metal Mining,0.0,N/A,
-PONOU,"Pono Capital Four, Inc.",HONOLULU,Blank Checks,0.0,N/A,
+PONOR,"Pono Capital Four, Inc.",HONOLULU,Blank Checks,0.0,N/A,
 CGDXF,XALI GOLD CORP.,VANCOUVER,,0.0,N/A,
 ZHDM,Ainnova Tech,HOUSTON,,0.0,N/A,
 ILPLF,Island Pharmaceuticals Ltd,CAMBERWELL,,0.0,N/A,
@@ -8235,7 +8239,7 @@ EXYNW,"Exyn Technologies, Inc.",PHILADELPHIA,Services-Prepackaged Software,0.0,N
 DGCOF,Daura Capital Corp.,VANCOUVER,,0.0,N/A,
 ALTUF,Altura Energy Corp.,VANCOUVER,,0.0,N/A,
 MAKO,Mako Mining Corp.,VANCOUVER,Gold and Silver Ores,0.0,N/A,
-ELOX,"Eloxx Pharmaceuticals, Inc.",ARLINGTON,"Biological Products, (No Diagnostic Substances)",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1035354/000119312526108687/elox-20251231.htm
+ELOXD,"Eloxx Pharmaceuticals, Inc.",ARLINGTON,"Biological Products, (No Diagnostic Substances)",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1035354/000119312526108687/elox-20251231.htm
 APTN,"ADAPTIN BIO, INC.",CHARLOTTE,"Biological Products, (No Diagnostic Substances)",0.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1938571/000121390026038568/ea0282858-10k_adaptin.htm
 DZHE,"Dazhe Technology Group Co., Ltd.",XIAMEN,Blank Checks,0.0,N/A,
 OHACR,Oceanhawk Acquisition Corp.,NEW YORK,Blank Checks,0.0,N/A,
@@ -8289,7 +8293,7 @@ BRVMF,Bravo Mining Corp.,RIO DE JANEIRO,,0.0,N/A,
 DTSS,Datasea Intelligent Technology Ltd.,BEIJING,Services-Prepackaged Software,0.0,N/A,
 SPTX,"Seaport Therapeutics, Inc.",BOSTON,Pharmaceutical Preparations,0.0,N/A,
 MRCO,Mercator Acquisition Corp.,STAMFORD,Blank Checks,0.0,N/A,
-NHIVU,NewHold Investment Corp IV,NEW YORK,Blank Checks,0.0,N/A,
+NHIVW,NewHold Investment Corp IV,NEW YORK,Blank Checks,0.0,N/A,
 SUJA,"SUJA LIFE, INC.",OCEANSIDE,Beverages,0.0,N/A,
 CAPI,"CAPSTONE 72, INC.",PARMA,Real Estate,0.0,N/A,
 PLUN-UN,Plutonian Acquisition Corp. II,NEW YORK,Blank Checks,0.0,N/A,
@@ -8479,7 +8483,17 @@ IPGLF,INTERPUMP GROUP SPA /FI,ITALY,,0.0,N/A,
 GBCMF,Global Bio-chem Technology Group Co. Ltd / ADR,NEW YORK,,0.0,N/A,
 GHXI,"Gores Holdings XI, Inc.",GRAND CAYMAN,Blank Checks,0.0,N/A,
 NORT,Norient Acquisition,TEMPE,,0.0,N/A,
-ESSID,"ECO SCIENCE SOLUTIONS, INC.",SAN CLEMENTE,Retail-Miscellaneous Retail,-45.0,2026-01-31,https://www.sec.gov/Archives/edgar/data/1490873/000147793226003725/essi_10k.htm
+TELYF,TELYRX HOLDINGS INC.,TORONTO,,0.0,N/A,
+MIAC,Meridian3 Industrials Acquisition Corp,NEW YORK,,0.0,N/A,
+MNYCY,Manycore Tech Inc./ADR,NEW YORK,,0.0,N/A,
+TIHRF,Tharisa plc,PAPHOS,American Depositary Receipts,0.0,N/A,
+HUAQY,Huaqin Co. LTD/ADR,NEW YORK,,0.0,N/A,
+BEMPY,Bangkok Expressway & Metro Public Co Limited/ADR,BANGKOK,,0.0,N/A,
+OCAC-UN,Ocean Capital Acquisition Corp,168-200 CONNAUGHT ROAD CENTRAL,Blank Checks,0.0,N/A,
+MRAAF,"Murata Manufacturing Co., Ltd./ADR",NEW YORK,,0.0,N/A,
+JPHLF,"Japan Post Holdings Co., Ltd./ADR",TOKYO,,0.0,N/A,
+YSGL,Yellowstone Group Ltd.,SYDNEY,Services-Management Consulting Services,0.0,N/A,
+ESSI,"ECO SCIENCE SOLUTIONS, INC.",SAN CLEMENTE,Retail-Miscellaneous Retail,-45.0,2026-01-31,https://www.sec.gov/Archives/edgar/data/1490873/000147793226003725/essi_10k.htm
 TCRG,Cannaisseur Group Inc.,ATLANTA,Medicinal Chemicals & Botanical Products,-910.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1879270/000118518526001012/tcrg10k123125.htm
 VYND,"Vynleads, Inc.",ROCK HILL,Services-Personal Services,-6499.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1745078/000107997326000408/vynd_123125-10k.htm
 IPWR,Ideal Power Inc.,AUSTIN,Semiconductors & Related Devices,-22680.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1507957/000143774926009995/ipwr20251231_10k.htm
