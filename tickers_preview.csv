@@ -64,6 +64,7 @@ BBAAY,Alibaba Group Holding Ltd,CAUSEWAY BAY,"Services-Business Services, NEC",1
 KR,KROGER CO,CINCINNATI,Retail-Grocery Stores,147642000000.0,2026-01-31,https://www.sec.gov/Archives/edgar/data/56873/000110465926037723/kr-20260131x10k.htm
 VZ,VERIZON COMMUNICATIONS INC,NEW YORK,Telephone Communications (No Radiotelephone),138191000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/732712/000073271226000007/vz-20251231.htm
 UGP,ULTRAPAR HOLDINGS INC,SP BRAZIL 01350-900,Natural Gas Distribution,133498913000.0,N/A,
+MU,MICRON TECHNOLOGY INC,BOISE,Semiconductors & Related Devices,133188000000.0,2026-09-03,https://www.sec.gov/Archives/edgar/data/723125/000072312526000023/mu-20260903.htm
 MPC,Marathon Petroleum Corp,FINDLAY,Petroleum Refining,132699000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1510295/000151029526000009/mpc-20251231.htm
 PSX,Phillips 66,HOUSTON,Petroleum Refining,132376000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1534701/000153470126000006/psx-20251231.htm
 CCZ,COMCAST CORP,PHILADELPHIA,Cable & Other Pay Television Services,123707000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1166691/000162828026004994/cmcsa-20251231.htm
@@ -153,7 +154,6 @@ GEV,GE Vernova Inc.,CAMBRIDGE,Electronic & Other Electrical Equipment (No Comput
 LAD,LITHIA MOTORS INC,MEDFORD,Retail-Auto Dealers & Gasoline Stations,37634900000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1023128/000102312826000015/lad-20251231.htm
 FMX,MEXICAN ECONOMIC DEVELOPMENT INC,"MONTERREY, N.L.",Bottled & Canned Soft Drinks & Carbonated Waters,37476000000.0,N/A,
 CRH,CRH PUBLIC LTD CO,DUBLIN 16,"Cement, Hydraulic",37447000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/849395/000162828026009043/crh-20251231.htm
-MU,MICRON TECHNOLOGY INC,BOISE,Semiconductors & Related Devices,37378000000.0,2025-08-28,https://www.sec.gov/Archives/edgar/data/723125/000072312525000028/mu-20250828.htm
 WBD,"Warner Bros. Discovery, Inc.",NEW YORK,Cable & Other Pay Television Services,37296000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1437107/000143710726000020/wbd-20251231.htm
 WKC,WORLD KINECT CORP,MIAMI,Wholesale-Petroleum & Petroleum Products (No Bulk Stations),36916600000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/789460/000078946026000015/wkc-20251231.htm
 AMGN,AMGEN INC,THOUSAND OAKS,"Biological Products, (No Diagnostic Substances)",36751000000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/318154/000031815426000010/amgn-20251231.htm
@@ -5143,7 +5143,6 @@ SINC,Sincerity Applied Materials Holdings Corp.,"SOUTH VARRA, VIC","Plastic Mate
 USDEW,StableCoinX Inc.,WILMINGTON,Finance Services,62372.0,N/A,
 CLOW,"Cloudweb, Inc.",MOUNTAIN VIEW,"Services-Computer Programming, Data Processing, Etc.",61426.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1619227/000164033426000750/clow_10k.htm
 VIVO,VivoPower International PLC,LONDON,Electric & Other Services Combined,61000.0,N/A,
-GHST,GHST World Inc.,PALM BEACH GARDENS,Services-Prepackaged Software,60469.0,2025-06-30,https://www.sec.gov/Archives/edgar/data/1121795/000107997325001605/ghst_10k-063025.htm
 WYGC,Wenyuan Group Corp.,HANGZHOU,Services-Management Consulting Services,60285.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/723533/000149315226021866/form10-k.htm
 BIOF,"BLUE BIOFUELS, INC.",PALM BEACH GARDENS,Industrial Organic Chemicals,60000.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1549145/000149315226011555/form10-k.htm
 HYOR,HyOrc Corp,SAN DIEGO,Services-Engineering Services,59124.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1070789/000149315226013412/form10-k.htm
@@ -5270,6 +5269,7 @@ CDIOW,"Cardio Diagnostics Holdings, Inc.",CHICAGO,In Vitro & In Vivo Diagnostic 
 QPRC,QUEST PATENT RESEARCH CORP,RYE,Wholesale-Miscellaneous Nondurable Goods,14201.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/824416/000121390026036431/ea0282928-10k_quest.htm
 HNIT,Huineng Technology Corp,KUALA LUMPUR,Services-Computer Processing & Data Preparation,14200.0,2025-11-30,https://www.sec.gov/Archives/edgar/data/1994373/000149315226008238/form10-k.htm
 GLCP,GLOBAL LEADERS CORP,WANCHAI,Services-Management Consulting Services,14061.0,2024-10-31,https://www.sec.gov/Archives/edgar/data/1830696/000149315225003478/form10-k.htm
+GHST,GHST World Inc.,PALM BEACH GARDENS,Services-Prepackaged Software,13852.0,2026-06-30,https://www.sec.gov/Archives/edgar/data/1121795/000107997326001337/ghst_10k-063026.htm
 STI,Solidion Technology Inc.,DALLAS,"Miscellaneous Electrical Machinery, Equipment & Supplies",13350.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1881551/000121390026044126/ea0276988-10k_solidion.htm
 GCAND,"Greater Cannabis Company, Inc.",BALTIMORE,Pharmaceutical Preparations,12630.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/1695473/000149315226014210/form10-k.htm
 YBGJ,Yubo International Biotech Ltd,BEIJING,Electromedical & Electrotherapeutic Apparatus,12353.0,2025-12-31,https://www.sec.gov/Archives/edgar/data/895464/000164033426000598/yubo_10k.htm
@@ -8719,7 +8719,7 @@ AGXXF,AGILYX ASA / ADR,OSLO,,0.0,N/A,
 DCCPF,DCC plc,NEW YORK,,0.0,N/A,
 FNLPF,Fresnillo Plc/ADR,NEW YORK,,0.0,N/A,
 LABI,La Beaute Inc.,ASTORIA,Services-Personal Services,0.0,N/A,
-KHG,Kainan Holding Group Ltd,SHAH ALAM,Finance Services,0.0,N/A,
+KHG,Kainan Holding Group Ltd,SHAH ALAM,Services-Help Supply Services,0.0,N/A,
 WCCB,West Coast Community Bancorp,SANTA CRUZ,State Commercial Banks,0.0,N/A,
 WELA,Wella Co,NEW YORK,"Perfumes, Cosmetics & Other Toilet Preparations",0.0,N/A,
 NIFCF,Nifco Inc/Japan,NEW YORK,American Depositary Receipts,0.0,N/A,
